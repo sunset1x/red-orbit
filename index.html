@@ -245,19 +245,30 @@
   align-items: start; /* prevents vertical overlap */
 }
 
-/* CARD */
+/* GRID — more horizontal breathing room */
+.tutorial-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 36px 64px;        /* row-gap 36px, column-gap 64px */
+  justify-items: center;
+  align-items: start;
+  padding-inline: 12px;  /* small horizontal inset so cards never touch viewport */
+}
+
+/* CARD — keep consistent size and breathing inside */
 .tutorial-card {
   width: 100%;
-  max-width: 380px; /* slightly wider */
+  max-width: 340px;      /* slightly narrower so gutters remain roomy */
   background: var(--bg-alt);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-md);
-  padding: 22px; /* more breathing room */
-  box-shadow: 0 14px 32px rgba(0,0,0,0.42); /* softer, more human */
+  padding: 22px;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.42);
   display: flex;
   flex-direction: column;
-  gap: 16px; /* more spacing inside card */
-  transition: 0.15s ease;
+  gap: 16px;
+  transition: transform 0.15s ease;
 }
 
 .tutorial-card:hover {
