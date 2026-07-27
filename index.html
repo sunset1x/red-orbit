@@ -379,20 +379,21 @@
 
   <!-- SEARCH ENGINE -->
   <script>
-    const searchInput = document.getElementById("searchInput");
-    const cards = document.querySelectorAll(".tutorial-card");
+  const searchInput = document.getElementById("searchInput");
+  const cards = document.querySelectorAll(".tutorial-card");
 
-    searchInput.addEventListener("input", () => {
-      const query = searchInput.value.toLowerCase();
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
 
-      cards.forEach(card => {
-        const tags = card.dataset.tags.toLowerCase();
-        const match = tags.includes(query);
+    cards.forEach(card => {
+      const tags = card.dataset.tags.toLowerCase();
+      const match = tags.includes(query);
 
-        card.style.display = match ? "block" : "none";
-      });
+      card.style.display = match ? "block" : "none";
     });
-  </script>
+  });
+</script>
+
 
 </body>
 </html>
