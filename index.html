@@ -587,16 +587,6 @@
     });
   });
 
-     /* Seaarch Engine Animation */
-    const searchInput = document.getElementById("searchInput");
-  const searchBox = document.querySelector(".search-box");
-
-  searchInput.addEventListener("input", () => {
-    searchBox.classList.add("filtering");
-    setTimeout(() => searchBox.classList.remove("filtering"), 600);
-  });
-    
-    /* Live Tutorial Counter */
   function updateTutorialCount() {
     const count = document.querySelectorAll('.tutorial-card').length;
     const counter = document.querySelector('.tutorial-count');
@@ -604,9 +594,8 @@
       counter.textContent = `${count} tutorials live`;
     }
   }
-  
-    updateTutorialCount();
 
+  updateTutorialCount();
     
 </script>
 
