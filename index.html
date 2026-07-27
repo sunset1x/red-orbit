@@ -214,57 +214,58 @@
       justify-items: center;
     }
 
-    /* CARD */
-    .tutorial-card {
-      width: 100%;
-      max-width: 320px;
-      background: var(--bg-alt);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius-md);
-      padding: 16px;
-      box-shadow: 0 10px 26px rgba(0,0,0,0.38);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      transition: 0.15s ease;
-    }
+/* CARD */
+.tutorial-card {
+  width: 100%;
+  max-width: 360px; /* slightly wider */
+  background: var(--bg-alt);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 20px; /* more breathing room */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.40);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: 0.15s ease;
+}
 
-    .tutorial-card:hover {
-      transform: translateY(-3px);
-    }
+.tutorial-card:hover {
+  transform: translateY(-3px);
+}
 
-    /* VIDEO */
-    .tutorial-video {
-      width: 100%;
-      height: 160px;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
+/* VIDEO EMBED — bigger & cleaner */
+.tutorial-video {
+  width: 100%;
+  height: 200px; /* taller */
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
 
-    .tutorial-video iframe {
-      width: 100%;
-      height: 100%;
-    }
+.tutorial-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 
-    /* TEXT */
-    .tutorial-tags {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      color: var(--accent-soft);
-      letter-spacing: 0.05em;
-    }
+/* TEXT */
+.tutorial-tags {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+  letter-spacing: 0.05em;
+}
 
-    .tutorial-title {
-      font-size: 1.05rem;
-      font-weight: 600;
-    }
+.tutorial-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
 
-    .tutorial-desc {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.45;
-    }
+.tutorial-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
 
     /* FOOTER */
     footer {
@@ -322,51 +323,51 @@
           <small style="color: var(--text-muted);">6 tutorials live</small>
         </div>
 
-        <div class="tutorial-grid" id="tutorialGrid">
+<div class="tutorial-grid" id="tutorialGrid">
 
-          <!-- CARD 1 -->
-          <div class="tutorial-card" data-tags="paid recommend gta 5 online cherax">
-            <div class="tutorial-video">
-              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen></iframe>
-            </div>
-            <div class="tutorial-tags">PAID • RECOMMEND • GTA 5 ONLINE</div>
-            <div class="tutorial-title">Cherax</div>
-            <div class="tutorial-desc">
-              The most powerful and reliable paid GTA V mod menu for those willing to spend a bit.
-            </div>
-          </div>
+  <!-- CARD 1 -->
+  <div class="tutorial-card" data-tags="paid recommend gta 5 online cherax">
+    <div class="tutorial-video">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+    <div class="tutorial-tags">PAID • RECOMMEND • GTA 5 ONLINE</div>
+    <div class="tutorial-title">Cherax</div>
+    <div class="tutorial-desc">
+      The most powerful and reliable paid GTA V mod menu for those willing to spend a bit.
+    </div>
+  </div>
 
-          <!-- CARD 2 -->
-          <div class="tutorial-card" data-tags="free recommend gta 5 online yimmenu v2">
-            <div class="tutorial-video">
-              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen></iframe>
-            </div>
-            <div class="tutorial-tags">FREE • RECOMMEND • GTA 5 ONLINE</div>
-            <div class="tutorial-title">YimMenu V2</div>
-            <div class="tutorial-desc">
-              A full guide to the best free GTA5 Online menu for Enhanced Edition.
-            </div>
-          </div>
+  <!-- CARD 2 -->
+  <div class="tutorial-card" data-tags="free recommend gta 5 online yimmenu v2">
+    <div class="tutorial-video">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+    <div class="tutorial-tags">FREE • RECOMMEND • GTA 5 ONLINE</div>
+    <div class="tutorial-title">YimMenu V2</div>
+    <div class="tutorial-desc">
+      A full guide to the best free GTA5 Online menu for Enhanced Edition.
+    </div>
+  </div>
 
-          <!-- CARD 3 -->
-          <div class="tutorial-card" data-tags="free guide gta 5 online yimmenu legacy">
-            <div class="tutorial-video">
-              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen></iframe>
-            </div>
-            <div class="tutorial-tags">FREE • GUIDE • GTA 5 ONLINE</div>
-            <div class="tutorial-title">YimMenu (Legacy)</div>
-            <div class="tutorial-desc">
-              A full guide to the best free GTA5 Online menu for Legacy Edition.
-            </div>
-          </div>
+  <!-- CARD 3 -->
+  <div class="tutorial-card" data-tags="free guide gta 5 online yimmenu legacy">
+    <div class="tutorial-video">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+    <div class="tutorial-tags">FREE • GUIDE • GTA 5 ONLINE</div>
+    <div class="tutorial-title">YimMenu (Legacy)</div>
+    <div class="tutorial-desc">
+      A full guide to the best free GTA5 Online menu for Legacy Edition.
+    </div>
+  </div>
 
-        </div>
+</div>
       </section>
     </main>
 
