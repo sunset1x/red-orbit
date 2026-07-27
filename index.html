@@ -1,254 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Tempest Modz</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>Tempest Modz – Story Mode Menus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #060818;
+      --bg-alt: #0c1128;
+      --accent: #5a3cff;
+      --accent-soft: #7a5cff;
+      --accent-pink: #e94fd6;
+      --text-main: #f2f4ff;
+      --text-muted: #a7acc9;
+      --card-border: rgba(255, 255, 255, 0.07);
+      --radius-lg: 16px;
+      --radius-md: 10px;
+      --shadow-soft: 0 12px 28px rgba(0, 0, 0, 0.45);
+      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.35);
+    }
 
-<style>
-  /* --- COLORS --- */
-  :root {
-    --bg: #0a0d1a;
-    --bg2: #111428;
-    --ink: #e8e9f3;
-    --ink-soft: #b7b9d4;
-    --purple: #6d4aff;
-    --purple-soft: #8a6cff;
-    --blue: #1f2b6f;
-    --blue-soft: #2f3c8f;
-    --card: #14172d;
-    --border: rgba(255,255,255,0.08);
-  }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: "Inter", sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background: linear-gradient(180deg, #0c1128 0%, #060818 60%);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
 
-  /* --- PAGE WRAPPER --- */
-  .wrap {
-    max-width: 1050px;
-    margin: auto;
-    padding: 40px 20px 80px;
-  }
+    .page-shell {
+      max-width: 1100px;
+      margin: auto;
+      padding: 32px 20px 80px;
+    }
 
-  /* --- HEADER --- */
-  header {
-    margin-bottom: 40px;
-  }
+    /* HEADER */
+    header {
+      margin-bottom: 40px;
+    }
 
-  .tag {
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    color: var(--ink-soft);
-    background: var(--blue-soft);
-    padding: 6px 14px;
-    border-radius: 20px;
-    display: inline-block;
-    opacity: 0.85;
-  }
+    .tagline {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: rgba(90, 60, 255, 0.18);
+      padding: 6px 14px;
+      border-radius: 20px;
+      display: inline-block;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
 
-  h1 {
-    margin-top: 20px;
-    font-size: 2.6rem;
-    font-weight: 700;
-    color: var(--purple-soft);
-  }
+    .hero {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 28px;
+    }
 
-  header p {
-    max-width: 600px;
-    line-height: 1.6;
-    color: var(--ink-soft);
-  }
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
 
-  .actions {
-    margin-top: 20px;
-    display: flex;
-    gap: 12px;
-  }
+    .hero-main h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      background: linear-gradient(120deg, #5a3cff, #e94fd6);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
 
-  .btn {
-    padding: 10px 18px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: var(--ink);
-    border: 1px solid var(--border);
-    background: var(--blue);
-    transition: 0.15s ease;
-  }
+    .hero-main p {
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 520px;
+    }
 
-  .btn:hover {
-    background: var(--blue-soft);
-  }
+    .hero-actions {
+      margin-top: 20px;
+      display: flex;
+      gap: 12px;
+    }
 
-  .btn.main {
-    background: var(--purple);
-    border-color: transparent;
-  }
+    .btn {
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+    }
 
-  .btn.main:hover {
-    background: var(--purple-soft);
-  }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: var(--shadow-sm);
+    }
 
-  /* --- SECTION HEADERS --- */
-  .section-title {
-    margin: 50px 0 20px;
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--purple-soft);
-  }
+    .btn-primary:hover {
+      background: var(--accent-soft);
+    }
 
-  .section-desc {
-    color: var(--ink-soft);
-    max-width: 500px;
-    margin-bottom: 20px;
-  }
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
 
-  /* --- GRID --- */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 22px;
-  }
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
 
-  /* --- CARDS --- */
-  .card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    padding: 18px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+    /* SIDE CARD */
+    .hero-aside {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow-soft);
+    }
 
-  .card small {
-    color: var(--purple-soft);
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
-  }
+    .hero-aside-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
 
-  .card h3 {
-    margin: 0;
-    font-size: 1.1rem;
-    color: var(--ink);
-  }
+    .hero-aside-stat-number {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
 
-  .card p {
-    color: var(--ink-soft);
-    line-height: 1.5;
-    font-size: 0.9rem;
-  }
+    .hero-aside-note {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
 
-  .video {
-    margin-top: 10px;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-  }
+    /* MAIN SECTIONS */
+    main {
+      margin-top: 40px;
+    }
 
-  .video iframe {
-    width: 100%;
-    height: 180px;
-  }
+    .section-header h2 {
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
 
-  footer {
-    margin-top: 60px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border);
-    color: var(--ink-soft);
-    font-size: 0.8rem;
-    line-height: 1.5;
-  }
-</style>
+    .section-header p {
+      color: var(--text-muted);
+      max-width: 420px;
+      line-height: 1.5;
+    }
+
+    .grid {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 22px;
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--bg-alt);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      color: var(--accent-soft);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .card-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .card-body {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .card-video {
+      margin-top: 12px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .card-video iframe {
+      width: 100%;
+      height: 200px;
+    }
+
+    .card-footer {
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: var(--accent-soft);
+    }
+
+    footer {
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+  </style>
 </head>
 
 <body>
-<div class="wrap">
+  <div class="page-shell">
+    <header>
+      <div class="tagline">STORY MODE ONLY · TUTORIALS BY TEMPEST MODZ</div>
 
-<header>
-  <div class="tag">STORY MODE ONLY — TEMPEST MODZ</div>
-  <h1>Tempest Modz</h1>
-  <p>
-    I make GTA V Story Mode mod tutorials and keep everything I actually use right here.
-    No weird links, no online mods, no nonsense — just the stuff that works.
-  </p>
+      <div class="hero">
+        <div class="hero-main">
+          <h1>Tempest Modz</h1>
+          <p>
+            I’m the guy behind Tempest Modz. This is where I keep every GTA V Story Mode mod menu
+            I actually use — plus the videos that walk you through them. No shady links, no online
+            nonsense. Just the stuff that works.
+          </p>
 
-  <div class="actions">
-    <a class="btn main" href="#menus">See the menus</a>
-    <a class="btn" href="https://youtube.com" target="_blank">YouTube</a>
+          <div class="hero-actions">
+            <a href="#menus" class="btn btn-primary">Browse the menus</a>
+            <a href="https://youtube.com" target="_blank" class="btn btn-ghost">Subscribe on YouTube</a>
+          </div>
+        </div>
+
+        <aside class="hero-aside">
+          <div class="hero-aside-label">Quick snapshot</div>
+          <div class="hero-aside-stat-number">6</div>
+          <p class="hero-aside-note">
+            Ordered from “start here” to “you probably know what you're doing already”.
+            Watch the video before installing anything — your save file will thank you.
+          </p>
+        </aside>
+      </div>
+    </header>
+
+    <main id="menus">
+      <section>
+        <div class="section-header">
+          <h2>The menus I actually use</h2>
+          <p>Stuff I keep installed all the time. If it’s here, I trust it.</p>
+        </div>
+
+        <div class="grid">
+          <!-- Card 1 -->
+          <article class="card">
+            <div class="card-tag">For the tinkerers</div>
+            <div class="card-title">Enhanced Native Trainer</div>
+            <div class="card-subtitle">Dial in every detail.</div>
+            <p class="card-body">
+              Deep customization, tons of options, and settings that actually stick.
+              If you like dialing things in, this is your playground.
+            </p>
+            <div class="card-video">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+            </div>
+            <div class="card-footer">Best for: character setups & detailed tweaking.</div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card">
+            <div class="card-tag">Build stuff</div>
+            <div class="card-title">Map Editor</div>
+            <div class="card-subtitle">Bases, ramps, chase routes.</div>
+            <p class="card-body">
+              Perfect for building scenes, stunt ramps, or whatever chaos you want to set up.
+              Pairs great with Menyoo.
+            </p>
+            <div class="card-video">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+            </div>
+            <div class="card-footer">Best for: custom scenes & cinematic setups.</div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-header">
+          <h2>Alternatives I still trust</h2>
+          <p>Menus I fall back on when something feels off or outdated.</p>
+        </div>
+
+        <div class="grid">
+          <!-- Card 3 -->
+          <article class="card">
+            <div class="card-tag">Modern & clean</div>
+            <div class="card-title">Ragehook Trainer V</div>
+            <div class="card-subtitle">Controller-friendly.</div>
+            <p class="card-body">
+              Clean UI, controller support out of the box, and still gets updates.
+              Great for couch sessions.
+            </p>
+            <div class="card-video">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+            </div>
+            <div class="card-footer">Best for: casual play & controller setups.</div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card">
+            <div class="card-tag">Bulletproof basic</div>
+            <div class="card-title">Native Trainer</div>
+            <div class="card-subtitle">Comes with Script Hook V.</div>
+            <p class="card-body">
+              Simple, reliable, and perfect for testing when something feels off.
+            </p>
+            <div class="card-video">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+            </div>
+            <div class="card-footer">Best for: troubleshooting & quick tests.</div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © 2026 Tempest Modz — Story Mode only.  
+      Not affiliated with Rockstar Games or Take‑Two Interactive.
+    </footer>
   </div>
-</header>
-
-<section id="menus">
-  <div class="section-title">The menus I actually use</div>
-  <div class="section-desc">
-    These are the ones I keep installed all the time. If it’s here, I trust it.
-  </div>
-
-  <div class="grid">
-
-    <div class="card">
-      <small>For the tinkerers</small>
-      <h3>Enhanced Native Trainer</h3>
-      <p>
-        Deep customization, tons of options, and settings that actually stick.
-        If you like dialing things in, this is your playground.
-      </p>
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
-      </div>
-    </div>
-
-    <div class="card">
-      <small>Build stuff</small>
-      <h3>Map Editor</h3>
-      <p>
-        Bases, ramps, chase routes — whatever chaos you want to set up.
-        Pairs perfectly with Menyoo.
-      </p>
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
-      </div>
-    </div>
-
-    <div class="card">
-      <small>Modern & clean</small>
-      <h3>Ragehook Trainer V</h3>
-      <p>
-        Controller-friendly, clean UI, and still gets updates.
-        Great for couch sessions.
-      </p>
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
-      </div>
-    </div>
-
-    <div class="card">
-      <small>Bulletproof basic</small>
-      <h3>Native Trainer</h3>
-      <p>
-        Comes with Script Hook V. Simple, reliable, and perfect for testing
-        when something feels off.
-      </p>
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<footer>
-  © 2026 Tempest Modz — Story Mode only.  
-  Not affiliated with Rockstar Games or Take‑Two Interactive.
-</footer>
-
-</div>
 </body>
 </html>
