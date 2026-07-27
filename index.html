@@ -205,6 +205,17 @@
       color: var(--text-muted);
     }
 
+/* GRID — stable 3-per-row layout */
+.tutorial-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* FORCE 3 cards per row */
+  gap: 32px; /* balanced spacing */
+  justify-items: center;
+  align-items: start;
+  padding-inline: 10px;
+}
+    
 /* CARD — full styling */
 .tutorial-card {
   width: 100%;
