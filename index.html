@@ -246,6 +246,18 @@
       background: var(--accent-hover);
       transform: translateY(-2px);
     }
+
+    /* Custom Badges */
+    .new-badge {
+      background: var(--accent);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: none; /* hidden until new tutorials appear */
+    }
+
     
     /* SIDE CARD */
     .hero-aside {
@@ -460,6 +472,7 @@
         <div class="search-box">
           <input id="searchInput" type="text" placeholder="Search by title, tag, or game…">
           <small class="tutorial-count">0 tutorials live</small>
+          <span class="new-badge">+ New</span>
         </div>
 
 <div class="tutorial-grid" id="tutorialGrid">
