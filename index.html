@@ -205,16 +205,27 @@
       color: var(--text-muted);
     }
 
-/* GRID — stable 3-per-row layout */
+/* GRID — stable 3-per-row layout 
 .tutorial-grid {
   margin-top: 30px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* FORCE 3 cards per row */
-  gap: 32px; /* balanced spacing */
+  grid-template-columns: repeat(3, 1fr); /* FORCE 3 cards per row
+  gap: 32px; /* balanced spacing
   justify-items: center;
   align-items: start;
   padding-inline: 10px;
 }
+    */
+    
+    /* GRID — stable spacing + centered + supports 3-per-row */
+.tutorial-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 36px 64px;        /* row-gap 36px, column-gap 64px */
+  justify-items: center; /* keeps cards centered */
+  align-items: start;    /* prevents vertical overlap */
+  padding-inline: 12px;  /* prevents cards touching the edges */
     
 /* CARD — full styling */
 .tutorial-card {
