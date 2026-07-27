@@ -170,29 +170,38 @@
       line-height: 1.5;
     }
 
-    /* MAIN SECTIONS */
-    main {
-      margin-top: 40px;
-    }
+/* MAIN SECTIONS */
+main {
+  margin-top: 50px; /* slightly more breathing room */
+  display: flex;
+  flex-direction: column;
+  gap: 60px; /* NEW: natural spacing between each section */
+}
 
-    .section-header h2 {
-      font-size: 1.4rem;
-      margin-bottom: 6px;
-    }
+/* SECTION HEADER */
+.section-header {
+  margin-bottom: 24px; /* more space before cards */
+}
 
-    .section-header p {
-      color: var(--text-muted);
-      max-width: 420px;
-      line-height: 1.5;
-    }
+.section-header h2 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
 
-    /* GRID */
-    .grid {
-      margin-top: 26px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-      gap: 26px;
-    }
+.section-header p {
+  color: var(--text-muted);
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+/* GRID */
+.grid {
+  margin-top: 10px; /* reduced top margin so spacing feels balanced */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 26px;
+}
+
 
     /* CARDS */
     .card {
