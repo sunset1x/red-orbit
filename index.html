@@ -563,7 +563,19 @@
       card.style.display = match ? "block" : "none";
     });
   });
+
+  function updateTutorialCount() {
+    const count = document.querySelectorAll('.tutorial-card').length;
+    const counter = document.querySelector('.tutorial-count');
+    if (counter) {
+      counter.textContent = `${count} tutorials live`;
+    }
+  }
+
+  updateTutorialCount();
+    
 </script>
+
 
 
 </body>
