@@ -588,11 +588,20 @@
   });
 
   function updateTutorialCount() {
-    const count = document.querySelectorAll('.tutorial-card').length;
+    const cards = document.querySelectorAll('.tutorial-card');
+    const count = cards.length;
     const counter = document.querySelector('.tutorial-count');
-    if (counter) {
-      counter.textContent = `${count} tutorials live`;
+    const badge = document.querySelector('.new-badge');
+
+    const previousCount = Number(localStorage.getItem("tutorialCount")) || 0;
+
+    counter.textContent = `${count} tutorials live`;
+
+    if (count > previousCount) {
+      badge.style.display = "inline-block";
     }
+
+    localStorage.setItem("tutorialCount", count);
   }
 
   updateTutorialCount();
