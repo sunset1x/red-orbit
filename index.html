@@ -65,7 +65,7 @@
       font-size: 0.8rem;
       color: var(--text-muted);
       background: rgba(90, 60, 255, 0.18);
-      padding: 8px 14px;
+      padding: 6px 14px;
       border-radius: 20px;
       display: inline-block;
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -289,8 +289,10 @@
     .search-box {
       margin: 40px 0 20px;
       display: flex;
+      justify-content: space-between;
       flex-direction: column;
       gap: 8px;
+      
     }
 
     .search-box input {
@@ -301,12 +303,20 @@
       background: rgba(255,255,255,0.05);
       color: var(--text-main);
       font-size: 0.95rem;
+      flex: 1;
     }
 
     .search-box input::placeholder {
       color: var(--text-muted);
     }
 
+    .tutorial-count {
+    margin-left: 16px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    }
+    
 /* GRID — stable 3-per-row layout */
 .tutorial-grid {
   margin-top: 30px;
@@ -439,7 +449,7 @@
 
         <div class="search-box">
           <input id="searchInput" type="text" placeholder="Search by title, tag, or game…">
-          <small style="color: var(--text-muted);">6 tutorials live</small>
+          <small class="tutorial-count">0 tutorials live</small>
         </div>
 
 <div class="tutorial-grid" id="tutorialGrid">
@@ -500,7 +510,7 @@
     </div>
   </div>
 
-  <!-- CARD 4 -->
+  <!-- CARD 5 -->
   <div class="tutorial-card" data-tags="free guide gta 5 online yimmenu legacy">
     <div class="tutorial-video">
       <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -513,20 +523,8 @@
       A full guide to the best free GTA5 Online menu for Legacy Edition.
     </div>
   </div>
-  <!-- CARD 4 -->
-  <div class="tutorial-card" data-tags="free guide gta 5 online yimmenu legacy">
-    <div class="tutorial-video">
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-    </div>
-    <div class="tutorial-tags">FREE • GUIDE • GTA 5 ONLINE</div>
-    <div class="tutorial-title">YimMenu (Legacy)</div>
-    <div class="tutorial-desc">
-      A full guide to the best free GTA5 Online menu for Legacy Edition.
-    </div>
-  </div>
-  <!-- CARD 4 -->
+  
+  <!-- CARD 6 -->
   <div class="tutorial-card" data-tags="free guide gta 5 online yimmenu legacy">
     <div class="tutorial-video">
       <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
