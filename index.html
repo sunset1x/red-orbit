@@ -135,7 +135,72 @@
     .btn-discord:hover {
       background: #6f7aff;
     }
+    
+/* FEATURED GAME OF THE WEEK CARD */
+.featured-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.42);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 420px;
+  margin: 0 auto; /* keeps it centered */
+}
 
+/* Featured video embed */
+.featured-video {
+  width: 100%;
+  height: 240px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.featured-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Featured text */
+.featured-tags {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+  letter-spacing: 0.05em;
+}
+
+.featured-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.featured-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* Button */
+.featured-button {
+  display: inline-block;
+  padding: 10px 16px;
+  background: var(--accent);
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  transition: 0.15s ease;
+}
+
+.featured-button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+    
     /* SIDE CARD */
     .hero-aside {
       background: var(--bg-alt);
@@ -307,14 +372,23 @@
           </div>
         </div>
 
-        <aside class="hero-aside">
-          <div class="hero-aside-label">Quick snapshot</div>
-          <div class="hero-aside-stat-number">6</div>
-          <p class="hero-aside-note">
-            Ordered from “start here” to “you probably know what you're doing already”.
-            Watch the video before installing anything — your save file will thank you.
-          </p>
-        </aside>
+        <div class="featured-card">
+  <div class="featured-video">
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+  </div>
+
+  <div class="featured-tags">GAME OF THE WEEK</div>
+  <div class="featured-title">GTA V Story Mode Mods</div>
+  <div class="featured-desc">
+    Hand‑picked modding setup that’s stable, safe, and beginner‑friendly.  
+    Updated weekly based on community feedback and new releases.
+  </div>
+
+  <a href="#" class="featured-button">View Full Guide</a>
+</div>
+
       </div>
     </header>
 
