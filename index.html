@@ -166,86 +166,66 @@
       background: #6f7aff;
     }
     
-    /* FEATURED GAME OF THE WEEK CARD */
-    .featured-card {
-      background: var(--bg-alt);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius-md);
-      padding: 14px;
-      box-shadow: 0 14px 32px rgba(0,0,0,0.42);
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      max-width: 500px;
-      margin: -10 auto; /* keeps it centered */
-      animation: weeklySpotlight 4s ease-in-out infinite,
-                 fadeInWeekly 1.2s ease forwards;
-    }
-    
-    /* Featured video embed */
-    .featured-video {
-      width: 100%;
-      height: 240px;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-    
-    .featured-video iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    
-    /* Featured badge */
-    .featured-badge {
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      background: var(--accent);
-      color: white;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    }
-        
-    /* Featured text */
-    .featured-tags {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      color: var(--accent-soft);
-      letter-spacing: 0.05em;
-    }
-    
-    .featured-title {
-      font-size: 1.35rem;
-      font-weight: 600;
-    }
-    
-    .featured-desc {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
-    
-    /* Button */
-    .featured-button {
-      display: inline-block;
-      padding: 10px 16px;
-      background: var(--accent);
-      color: white;
-      border-radius: 8px;
-      text-align: center;
-      font-weight: 600;
-      transition: 0.15s ease;
-    }
-    
-    .featured-button:hover {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
-    }
+/* FEATURED CAROUSEL WRAPPER */
+.featured-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  height: 300px;
+}
+
+/* FEATURED CARD BASE */
+.featured-card {
+  position: absolute;
+  width: 300px;
+  height: 280px;
+  background: var(--bg-alt);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.42);
+  padding: 20px;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* EMBED VIDEO */
+.featured-video {
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.featured-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ACTIVE (CENTER) CARD */
+.featured-card.active {
+  transform: translateX(0) scale(1.15);
+  z-index: 3;
+  opacity: 1;
+}
+
+/* LEFT CARD */
+.featured-card.left {
+  transform: translateX(-280px) scale(0.9);
+  z-index: 2;
+  opacity: 0.7;
+}
+
+/* RIGHT CARD */
+.featured-card.right {
+  transform: translateX(280px) scale(0.9);
+  z-index: 2;
+  opacity: 0.7;
+}
+
 
     /* Custom Badges */
     .new-badge {
@@ -636,6 +616,7 @@
     });
   });
 
+    /* Live Counter */
   function updateTutorialCount() {
     const cards = document.querySelectorAll('.tutorial-card');
     const count = cards.length;
@@ -654,6 +635,33 @@
   }
 
   updateTutorialCount();
+
+    /* Featureed Carousel */
+    const cards = document.querySelectorAll('.featured-card');
+  let activeIndex = 0;
+
+  function updateCarousel() {
+    cards.forEach((card, i) => {
+      card.classList.remove('active', 'left', 'right');
+
+      if (i === activeIndex) {
+        card.classList.add('active');
+      } else if (i === (activeIndex - 1 + cards.length) % cards.length) {
+        card.classList.add('left');
+      } else if (i === (activeIndex + 1) % cards.length) {
+        card.classList.add('right');
+      }
+    });
+  }
+
+  cards.forEach((card, i) => {
+    card.addEventListener('click', () => {
+      activeIndex = i;
+      updateCarousel();
+    });
+  });
+
+  updateCarousel();
     
 </script>
 
