@@ -361,20 +361,22 @@
     }
 
     .tutorial-count {
+    display: flex;          /* THIS makes the dot appear */
+    align-items: center;    /* keeps dot vertically aligned */
     margin-left: 5px;
     font-size: 0.85rem;
     color: var(--text-muted);
     white-space: nowrap;
     }
 
-        /* Flashing red dot next to tutorial counter */
+    /* Flashing red dot next to tutorial counter */
     .tutorial-dot {
       display: inline-block;
       width: 10px;
       height: 10px;
-      background: #ff3b3b;        /* bright red */
+      background: #ff3b3b;
       border-radius: 50%;
-      margin-right: 8px;          /* spacing before text */
+      margin-right: 8px;
       animation: dotPulse 1.2s infinite ease-in-out;
     }
     
@@ -384,6 +386,7 @@
       50% { transform: scale(1.6); opacity: 0.4; }
       100% { transform: scale(1); opacity: 1; }
     }
+
     
     /* GRID — stable 3-per-row layout */
     .tutorial-grid {
@@ -518,7 +521,7 @@
 
         <div class="search-box">
           <input id="searchInput" type="text" placeholder="Search by title, tag, or game…">
-          <small class="tutorial-count"><span class="tutorial-dot"></span>0 tutorials live</small>
+          <small class="tutorial-count"><span class="tutorial-dot"></span>6 tutorials live</small>
           <span class="new-badge">+ New</span>
         </div>
 
