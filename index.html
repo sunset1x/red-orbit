@@ -366,6 +366,24 @@
     color: var(--text-muted);
     white-space: nowrap;
     }
+
+        /* Flashing red dot next to tutorial counter */
+    .tutorial-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: #ff3b3b;        /* bright red */
+      border-radius: 50%;
+      margin-right: 8px;          /* spacing before text */
+      animation: dotPulse 1.2s infinite ease-in-out;
+    }
+    
+    /* Pulse animation */
+    @keyframes dotPulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.6); opacity: 0.4; }
+      100% { transform: scale(1); opacity: 1; }
+    }
     
     /* GRID — stable 3-per-row layout */
     .tutorial-grid {
