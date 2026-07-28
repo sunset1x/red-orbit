@@ -680,6 +680,28 @@
       transform: scale(0.96);                                /* press effect */
     }
 
+        .btn-help {
+      background: #222;
+      padding: 10px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+    
+    .btn-help:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+    
+    .btn-help .icon {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
 
 
     /* FOOTER */
@@ -926,6 +948,7 @@ const tutorialData = {
     desc: "The best free GTA5 Online menu for Enhanced Edition.",
     embed: "https://www.youtube.com/embed/ddmhUIjrmoU",
     type: "free",
+    help: "https://www.youtube.com/watch?v=xj9UvxI6voM",
     download: "https://loot-link.com/s?GWDxHyNk",
     triggerScript: true,
     website: "",
@@ -938,6 +961,7 @@ const tutorialData = {
     desc: "The best free GTA5 Online menu for Legacy Edition.",
     embed: "https://www.youtube.com/embed/EhqrD2KMqWs",
     type: "free",
+    help: "https://www.youtube.com/watch?v=xj9UvxI6voM",
     download: "https://loot-link.com/s?4ggkVkbh",
     website: "",
     discord: "https://discord.gg/bHy6eRMNeV"
@@ -961,6 +985,7 @@ const tutorialData = {
     desc: "The most iconic free GTA5 Online menu for Legacy Edition.",
     embed: "https://www.youtube.com/embed/pnnwFsWkYzE",
     type: "free",
+    help: "https://www.youtube.com/watch?v=xj9UvxI6voM",
     download: "https://loot-link.com/s?dd3d6b1d",
     website: "",
     discord: "https://discord.gg/bHy6eRMNeV"
@@ -1057,6 +1082,15 @@ document.querySelectorAll(".more-btn").forEach(btn => {
         </a>
         
       `;
+    // HELP BUTTON (only for free menus with help icon)
+if (t.type === "free" && t.help) {
+  buttons += `
+    <a href="${t.help}" class="btn-help" target="_blank">
+      <img src="${t.help}" class="icon">
+    </a>
+  `;
+}
+
     }
     // PAID MENU → Purchase
     if (t.type === "paid" && t.purchase) {
