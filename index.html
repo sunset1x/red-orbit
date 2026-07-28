@@ -168,39 +168,26 @@
           gap: 14px;
         }
     
-            .theme-container {
-          position: fixed;
-          bottom: 20px;
-          right: 20px;
-          z-index: 9999;
-          display: flex;
-          flex-direction: column-reverse; /* THIS MAKES IT GO UP */
-          align-items: flex-end;
-          gap: 8px;
-        }
+    .theme-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--bg-alt);
+      color: var(--text-main);
+      border: 1px solid var(--card-border);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: 0.2s ease;
+      z-index: 9999;
+    }
     
-          .theme-btn {
-          position: fixed;
-          bottom: 20px;
-          right: 20px;
-          background: var(--bg-alt);
-          color: var(--text-main);
-          border: 1px solid var(--card-border);
-          padding: 10px 14px;
-          border-radius: 10px;
-          font-size: 20px;
-          cursor: pointer;
-          box-shadow: var(--shadow-sm);
-          transition: 0.2s ease;
-          z-index: 9999;
-        }
-        
-        .theme-btn:hover {
-          background: var(--accent-soft);
-          color: #fff;
-        }
-
-
+    .theme-btn:hover {
+      background: var(--accent-soft);
+      color: #fff;
+    }
 
     
     .btn {
@@ -1298,24 +1285,24 @@ modalOverlay.addEventListener("click", () => {
   updateTutorialCount();
 
 /* Themes */
-    const themeOrder = ["theme-tempest", "theme-purple", "theme-blood"];
-    let currentTheme = localStorage.getItem("theme") || "theme-purple";
-    
-    document.body.classList.add(currentTheme);
-    document.getElementById("themeDropdown").value = currentTheme;
-    
-    document.getElementById("themeDropdown").addEventListener("change", (e) => {
-      const newTheme = e.target.value;
-    
-      document.body.classList.remove(currentTheme);
-      document.body.classList.add(newTheme);
-    
-      currentTheme = newTheme;
-      localStorage.setItem("theme", newTheme);
-    });
+const themeOrder = ["theme-tempest", "theme-purple", "theme-blood"];
+let currentTheme = localStorage.getItem("theme") || "theme-purple";
+
+document.body.classList.add(currentTheme);
+
+document.getElementById("themeButton").addEventListener("click", () => {
+  const index = themeOrder.indexOf(currentTheme);
+  const nextTheme = themeOrder[(index + 1) % themeOrder.length];
+
+  document.body.classList.remove(currentTheme);
+  document.body.classList.add(nextTheme);
+
+  currentTheme = nextTheme;
+  localStorage.setItem("theme", nextTheme);
+});
 
 
-    
+
 </script>
   <script>  // Mouse scroll
   let scrollTarget = window.pageYOffset;
