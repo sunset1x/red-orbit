@@ -125,6 +125,7 @@
 
     @media (max-width: 800px) {
       .hero {
+        display: grid;
         grid-template-columns: 1fr;
       }
     }
@@ -137,6 +138,18 @@
       color: transparent;
     }
 
+    .title-gradient {
+      background: linear-gradient(
+        90deg,
+        var(--accent),
+        var(--accent-soft),
+        var(--accent-pink)
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block; /* prevents layout break */
+    }
+    
     .hero-main p {
       color: var(--text-muted);
       line-height: 1.6;
@@ -811,7 +824,7 @@
       <div class="tagline">STORY MODE ONLY · TUTORIALS BY TEMPEST MODZ</div>
 
       <div class="hero">
-        <div class="hero-main">
+        <div class="titel-gradient">
           <h1>Tempest Modz</h1>
           <p>
             I’m the guy behind Tempest Modz. This is where I keep every GTA V Story Mode mod menu
