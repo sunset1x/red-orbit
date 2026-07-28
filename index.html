@@ -1020,7 +1020,7 @@ document.querySelectorAll(".more-btn").forEach(btn => {
 
     let buttons = "";
 
-    // FREE MENU → show Download
+    // FREE MENU → Download
     if (t.type === "free" && t.download) {
       buttons += `
         <a href="${t.download}" class="btn-download" target="_blank">
@@ -1030,7 +1030,7 @@ document.querySelectorAll(".more-btn").forEach(btn => {
       `;
     }
 
-    // PAID MENU → show Purchase
+    // PAID MENU → Purchase
     if (t.type === "paid" && t.purchase) {
       buttons += `
         <a href="${t.purchase}" class="btn-website" target="_blank">
@@ -1058,30 +1058,18 @@ document.querySelectorAll(".more-btn").forEach(btn => {
       `;
     }
 
-    }
-
-        modalContent.innerHTML = `
+    // FINAL POPUP CONTENT
+    modalContent.innerHTML = `
       <h2>${t.title}</h2>
-    
+
       <iframe width="100%" height="315"
         src="${t.embed}"
         allowfullscreen></iframe>
-    
+
       <p style="margin-top:15px;">${t.desc}</p>
-    
+
       <div class="modal-buttons">
-        <a href="${t.download}" class="btn-download" target="_blank">
-          <img src="c" class="icon">
-          <span class="download-text">Download</span>
-        </a>
-    
-        <a href="${t.website}" class="btn-website" target="_blank">
-          <img src="https://raw.githubusercontent.com/sunset1x/red-orbit/refs/heads/main/images/website.png" class="icon">
-        </a>
-    
-        <a href="${t.discord}" class="btn-discord" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" class="icon">
-        </a>
+        ${buttons}
       </div>
     `;
 
@@ -1089,6 +1077,7 @@ document.querySelectorAll(".more-btn").forEach(btn => {
     modalOverlay.classList.add("active");
   });
 });
+
 
 
 modalClose.addEventListener("click", () => {
