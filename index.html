@@ -21,6 +21,42 @@
       --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.35);
     }
 
+    /* ⭐ THEME 1 — Tempest Aquatic */
+    .theme-tempest {
+      --bg: #031018;
+      --bg-alt: #06202c;
+      --accent: #00c8ff;
+      --accent-soft: #0094cc;
+      --accent-pink: #00eaff;
+      --text-main: #e8faff;
+      --text-muted: #9ac7d1;
+      --card-border: rgba(0, 200, 255, 0.15);
+    }
+    
+    /* ⭐ THEME 2 — Purple (your current theme) */
+    .theme-purple {
+      --bg: #060818;
+      --bg-alt: #0c1128;
+      --accent: #5a3cff;
+      --accent-soft: #7a5cff;
+      --accent-pink: #e94fd6;
+      --text-main: #f2f4ff;
+      --text-muted: #a7acc9;
+      --card-border: rgba(255, 255, 255, 0.07);
+    }
+    
+    /* ⭐ THEME 3 — Blood Red */
+    .theme-blood {
+      --bg: #0a0002;
+      --bg-alt: #140005;
+      --accent: #ff1a1a;
+      --accent-soft: #cc0000;
+      --accent-pink: #ff4d4d;
+      --text-main: #ffe6e6;
+      --text-muted: #b38b8b;
+      --card-border: rgba(255, 0, 0, 0.15);
+    }
+    
     body {
       font-family: "Inter", system-ui, sans-serif;
       background: linear-gradient(180deg, #0c1128 0%, #060818 60%);
@@ -115,6 +151,26 @@
       gap: 14px;
     }
 
+    .theme-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #222;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 18px;
+      z-index: 9999;
+      transition: 0.2s ease;
+    }
+    
+    .theme-btn:hover {
+      background: #333;
+      transform: translateY(-2px);
+    }
+
+    
     .btn {
       padding: 10px 18px;
       border-radius: 999px;
@@ -949,6 +1005,7 @@
   <div class="footer-inner">
     © 2026 Tempest Modz — Story Mode only.<br>Not affiliated with Rockstar Games or Take‑Two Interactive.
   </div>
+    <div id="themeButton" class="theme-btn">🎨</div>
 </footer>
 
   <script>
@@ -1197,6 +1254,26 @@ modalOverlay.addEventListener("click", () => {
   }
 
   updateTutorialCount();
+
+/* Themes */
+    const themeOrder = ["theme-tempest", "theme-purple", "theme-blood"];
+    let currentTheme = localStorage.getItem("theme") || "theme-purple";
+    
+    document.body.classList.add(currentTheme);
+    
+    function switchTheme() {
+      const index = themeOrder.indexOf(currentTheme);
+      const nextTheme = themeOrder[(index + 1) % themeOrder.length];
+    
+      document.body.classList.remove(currentTheme);
+      document.body.classList.add(nextTheme);
+    
+      currentTheme = nextTheme;
+      localStorage.setItem("theme", nextTheme);
+    }
+    
+    document.getElementById("themeButton").addEventListener("click", switchTheme);
+
     
 </script>
   <script>  // Mouse scroll
