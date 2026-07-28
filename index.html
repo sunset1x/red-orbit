@@ -363,31 +363,18 @@
     .tutorial-count {
     display: flex;          /* THIS makes the dot appear */
     align-items: center;    /* keeps dot vertically aligned */
-    gap: 6px;                 /* guaranteed spacing */
     margin-left: 5px;
     font-size: 0.85rem;
     color: var(--text-muted);
     white-space: nowrap;
     }
 
-    /* Flashing red dot next to tutorial counter */
     .tutorial-dot {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      background: #ff3b3b;
-      border-radius: 50%;
-      margin-right: 8px;
-      animation: dotPulse 1.2s infinite ease-in-out;
-    }
-    
-    /* Pulse animation */
-    @keyframes dotPulse {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.6); opacity: 0.4; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
+    width: 10px;
+    height: 10px;
+    background: #ff3b3b;   /* solid red */
+    border-radius: 50%;
+  }
     
     /* GRID — stable 3-per-row layout */
     .tutorial-grid {
@@ -399,7 +386,7 @@
       align-items: start;
       padding-inline: 10px;
     }
-        
+
     /* CARD — full styling */
     .tutorial-card {
       width: 100%;
