@@ -484,6 +484,24 @@
       font-size: 0.8rem;
       line-height: 1.5;
     }
+    site-footer {
+      width: 100%;
+      padding: 30px 0;
+      margin-top: 60px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-align: center;        /* fixes bottom-left issue */
+      display: block;            /* ensures full-width */
+      position: relative;        /* prevents scroll engine from clipping */
+      z-index: 5;                /* keeps it above grid/pagination */
+    }
+    
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
     
   </style>
 </head>
@@ -657,11 +675,12 @@
     
       </div>
   
-    <footer>
-      © 2026 Tempest Modz — Story Mode only.  
-      Not affiliated with Rockstar Games or Take‑Two Interactive.
-    </footer>
-
+  <footer class="site-footer">
+  <div class="footer-inner">
+    © 2026 Tempest Modz — Story Mode only.<br>
+    Not affiliated with Rockstar Games or Take‑Two Interactive.
+  </div>
+</footer>
   <!-- SEARCH ENGINE -->
   <script>
   const searchInput = document.getElementById("searchInput");
