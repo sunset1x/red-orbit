@@ -363,6 +363,7 @@
     .tutorial-count {
     display: flex;          /* THIS makes the dot appear */
     align-items: center;    /* keeps dot vertically aligned */
+    gap: 6px;                 /* guaranteed spacing */
     margin-left: 5px;
     font-size: 0.85rem;
     color: var(--text-muted);
@@ -521,7 +522,7 @@
 
         <div class="search-box">
           <input id="searchInput" type="text" placeholder="Search by title, tag, or game…">
-          <small class="tutorial-count"><span class="tutorial-dot"></span>6 tutorials live</small>
+          <div class="tutorial-count"><span class="tutorial-dot"></span>6 tutorials live</div>
           <span class="new-badge">+ New</span>
         </div>
 
