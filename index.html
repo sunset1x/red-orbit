@@ -1141,7 +1141,7 @@ document.querySelectorAll(".more-btn").forEach(btn => {
   if (t.type === "free" && t.helpTooltip && t.helpLink) {
     buttons += `
       <a href="${t.helpLink}" target="_blank" class="help-tooltip">
-        <img src="https://raw.githubusercontent.com/sunset1x/red-orbit/refs/heads/main/images/customer-care.png" class="icon">
+        <span class="icon">?</span>
         <span class="tooltip-text">${t.helpTooltip}</span>
       </a>
     `;
