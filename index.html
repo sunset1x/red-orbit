@@ -702,7 +702,7 @@ html {
   updateTutorialCount();
     
 </script>
-  <script>
+  <script>   // Page setup
   const tutorials = document.querySelectorAll('.tutorial-card');
   const pageButtons = document.querySelectorAll('.page-btn');
   const perPage = 6;
@@ -728,6 +728,20 @@ html {
 
   // Load page 1 by default
   showPage(1);
+</script>
+  
+  <script>  // Mouse scroll
+
+  const scrollSpeed = 0.12; // lower = smoother
+  let currentScroll = window.pageYOffset;
+
+  function smoothScroll() {
+    currentScroll += (window.pageYOffset - currentScroll) * scrollSpeed;
+    window.scrollTo(0, currentScroll);
+    requestAnimationFrame(smoothScroll);
+  }
+
+  smoothScroll();
 </script>
 
 
