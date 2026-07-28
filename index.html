@@ -708,7 +708,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: help;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .help-tooltip .icon {
@@ -737,13 +738,14 @@
   white-space: nowrap;
   box-shadow: 0 0 10px rgba(0,0,0,0.4);
   transition: opacity 0.2s ease;
-  pointer-events: none;
+  pointer-events: none; /* keeps tooltip from blocking clicks */
 }
 
 .help-tooltip:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
 }
+
 
     
 
@@ -992,7 +994,7 @@ const tutorialData = {
     embed: "https://www.youtube.com/embed/ddmhUIjrmoU",
     type: "free",
     helpTooltip: "Need help installing YimMenu V2?",
-    helpLink: "https://www.youtube.com/watch?v=xj9UvxI6voM,
+    helpLink: "https://www.youtube.com/watch?v=xj9UvxI6voM",
     download: "https://loot-link.com/s?GWDxHyNk",
     website: "",
     discord: "https://discord.gg/bHy6eRMNeV",
@@ -1005,7 +1007,7 @@ const tutorialData = {
     embed: "https://www.youtube.com/embed/EhqrD2KMqWs",
     type: "free",
     helpTooltip: "Need help installing YimMenu (Legacy)?",
-    helpLink: "https://www.youtube.com/watch?v=xj9UvxI6voM,
+    helpLink: "https://www.youtube.com/watch?v=xj9UvxI6voM",
     download: "https://loot-link.com/s?4ggkVkbh",
     website: "",
     discord: "https://discord.gg/bHy6eRMNeV"
@@ -1030,7 +1032,7 @@ const tutorialData = {
     embed: "https://www.youtube.com/embed/pnnwFsWkYzE",
     type: "free",
     helpTooltip: "Need help installing YimMenu V2?",
-    helpLink: "https://www.youtube.com/watch?v=xj9UvxI6voM,
+    helpLink: "https://www.youtube.com/watch?v=xj9UvxI6voM",
     download: "https://loot-link.com/s?dd3d6b1d",
     website: "",
     discord: "https://discord.gg/bHy6eRMNeV"
