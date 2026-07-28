@@ -166,86 +166,176 @@
       background: #6f7aff;
     }
     
-    /* FEATURED GAME OF THE WEEK CARD */
-    .featured-card {
-      background: var(--bg-alt);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius-md);
-      padding: 14px;
-      box-shadow: 0 14px 32px rgba(0,0,0,0.42);
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      max-width: 500px;
-      margin: -10 auto; /* keeps it centered */
-      animation: weeklySpotlight 4s ease-in-out infinite,
-                 fadeInWeekly 1.2s ease forwards;
-    }
-    
-    /* Featured video embed */
-    .featured-video {
-      width: 100%;
-      height: 240px;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-    
-    .featured-video iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    
-    /* Featured badge */
-    .featured-badge {
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      background: var(--accent);
-      color: white;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    }
-        
-    /* Featured text */
-    .featured-tags {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      color: var(--accent-soft);
-      letter-spacing: 0.05em;
-    }
-    
-    .featured-title {
-      font-size: 1.35rem;
-      font-weight: 600;
-    }
-    
-    .featured-desc {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
-    
-    /* Button */
-    .featured-button {
-      display: inline-block;
-      padding: 10px 16px;
-      background: var(--accent);
-      color: white;
-      border-radius: 8px;
-      text-align: center;
-      font-weight: 600;
-      transition: 0.15s ease;
-    }
-    
-    .featured-button:hover {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
-    }
+/* FEATURED SECTION */
+.featured {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* FEATURED CARD */
+.featured-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.42);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  animation: weeklySpotlight 4s ease-in-out infinite,
+             fadeInWeekly 1.2s ease forwards;
+}
+
+/* Hover Lift */
+.featured-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+}
+
+/* Background Glow */
+.featured-glow {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(0,150,255,0.25), transparent 70%);
+  filter: blur(40px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Featured video */
+.featured-video {
+  width: 100%;
+  height: 240px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.featured-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Badge */
+.featured-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: var(--accent);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+
+/* Badge Shine Animation */
+.badge-shine {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+  transform: skewX(-20deg);
+  animation: shineMove 2.5s infinite;
+}
+
+@keyframes shineMove {
+  0% { left: -50%; }
+  100% { left: 150%; }
+}
+
+/* Updated This Week Pulse */
+.updated-pulse {
+  position: absolute;
+  top: -6px;
+  right: 42px;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulseDot 1.8s infinite;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.8); opacity: 0.4; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Featured text */
+.featured-tags {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+  letter-spacing: 0.05em;
+}
+
+.featured-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.featured-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* Button */
+.featured-button {
+  display: inline-block;
+  padding: 10px 16px;
+  background: var(--accent);
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  transition: 0.15s ease;
+}
+
+.featured-button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* Weekly Spotlight Animation */
+@keyframes weeklySpotlight {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.0);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 22px rgba(255, 255, 255, 0.15);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.0);
+  }
+}
+
+/* Fade In Animation */
+@keyframes fadeInWeekly {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 
     /* Custom Badges */
     .new-badge {
@@ -441,23 +531,41 @@
           </div>
         </div>
 
-        <div class="featured-card">
-        <div class="featured-video">
-    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-  </div>
+        <section class="featured">
+  <div class="featured-card">
 
-  <div class="featured-badge">RECOMMENDED</div>
-  <div class="featured-tags">GAME OF THE WEEK</div>
-  <div class="featured-title">GTA V Story Mode Mods</div>
-  <div class="featured-desc">
-    Hand‑picked modding setup that’s stable, safe, and beginner‑friendly.  
-    Updated weekly based on community feedback and new releases.
-  </div>
+    <!-- Background Glow -->
+    <div class="featured-glow"></div>
 
-  <a href="#" class="featured-button">View Full Guide</a>
-</div>
+    <!-- Video -->
+    <div class="featured-video">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+
+    <!-- Badge with Shine -->
+    <div class="featured-badge">
+      RECOMMENDED
+      <span class="badge-shine"></span>
+    </div>
+
+    <!-- Updated Pulse -->
+    <div class="updated-pulse"></div>
+
+    <div class="featured-tags">GAME OF THE WEEK</div>
+
+    <div class="featured-title">GTA V Story Mode Mods</div>
+
+    <div class="featured-desc">
+      Hand‑picked modding setup that’s stable, safe, and beginner‑friendly.  
+      Updated weekly based on community feedback and new releases.
+    </div>
+
+    <a href="#" class="featured-button">View Full Guide</a>
+
+  </div>
+</section>
 
       </div>
     </header>
