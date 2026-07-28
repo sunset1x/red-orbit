@@ -171,41 +171,26 @@
       position: relative;
       width: 100%;
       max-width: 900px;
-      margin: 40px auto;
-      height: 300px;
+      height: 360px; /* matches your original card height */
+      margin: 60px auto;
     }
-
+    
+    /* FEATURED CARD — SAME SIZE AS YOUR ORIGINAL */
     .featured-card {
+      position: absolute;
+      width: 420px;          /* your original width */
+      height: 360px;         /* your original height */
       background: var(--bg-alt);
       border: 1px solid var(--card-border);
       border-radius: var(--radius-md);
-      padding: 14px;
       box-shadow: 0 14px 32px rgba(0,0,0,0.42);
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      max-width: 500px;
-      margin: -10 auto; /* keeps it centered */
-      animation: weeklySpotlight 4s ease-in-out infinite,
-                 fadeInWeekly 1.2s ease forwards;
+      padding: 24px;
+      text-align: center;
+      transition: transform 0.45s ease, opacity 0.45s ease;
+      cursor: pointer;
     }
     
-    /* Featured video embed */
-    .featured-video {
-      width: 100%;
-      height: 240px;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-    
-    .featured-video iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-      /* Featured badge */
+    /* BADGE */
     .featured-badge {
       position: absolute;
       top: -10px;
@@ -219,7 +204,22 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
     
-    /* Featured text */
+    /* EMBED VIDEO — SAME SIZE AS YOUR ORIGINAL */
+    .featured-video {
+      width: 100%;
+      height: 240px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+    
+    .featured-video iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    /* TEXT */
     .featured-tags {
       font-size: 0.8rem;
       text-transform: uppercase;
@@ -230,22 +230,24 @@
     .featured-title {
       font-size: 1.35rem;
       font-weight: 600;
+      margin-top: 6px;
     }
     
     .featured-desc {
       font-size: 0.95rem;
       color: var(--text-muted);
       line-height: 1.55;
+      margin-top: 6px;
     }
     
-    /* Button */
+    /* BUTTON — YOUR ORIGINAL STYLE */
     .featured-button {
       display: inline-block;
+      margin-top: 10px;
       padding: 10px 16px;
       background: var(--accent);
       color: white;
       border-radius: 8px;
-      text-align: center;
       font-weight: 600;
       transition: 0.15s ease;
     }
@@ -255,26 +257,27 @@
       transform: translateY(-2px);
     }
     
-    /* ACTIVE (CENTER) CARD */
+    /* ACTIVE (CENTER) */
     .featured-card.active {
       transform: translateX(0) scale(1.15);
       z-index: 3;
       opacity: 1;
     }
     
-    /* LEFT CARD */
+    /* LEFT */
     .featured-card.left {
-      transform: translateX(-280px) scale(0.9);
+      transform: translateX(-360px) scale(0.9);
       z-index: 2;
       opacity: 0.7;
     }
     
-    /* RIGHT CARD */
+    /* RIGHT */
     .featured-card.right {
-      transform: translateX(280px) scale(0.9);
+      transform: translateX(360px) scale(0.9);
       z-index: 2;
       opacity: 0.7;
     }
+
 
 
     /* Custom Badges */
