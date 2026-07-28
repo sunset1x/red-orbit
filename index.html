@@ -657,7 +657,7 @@
     <div class="tutorial-desc">
       A full guide to the best free GTA5 Online menu for Enhanced Edition.
     </div>
-    <button class="more-btn" data-id="v2">MORE</button>
+    <button class="more-btn" data-id="yimv2">MORE</button>
   </div>
 
   <!-- CARD 3 -->
@@ -687,7 +687,7 @@
     <div class="tutorial-desc">
       A full guide to the best free GTA5 Online menu for Legacy Edition.
     </div>
-    <button class="more-btn" data-id="v1">MORE</button>
+    <button class="more-btn" data-id="yimv1">MORE</button>
   </div>
 
   <!-- CARD 5 -->
@@ -717,7 +717,7 @@
     <div class="tutorial-desc">
       A full guide to the best free GTA5 Online menu for Legacy Edition.
     </div>
-    <button class="more-btn" data-id="crap">MORE</button>
+    <button class="more-btn" data-id="legacy">MORE</button>
   </div>
 
   <!-- CARD 7 -->
@@ -761,8 +761,38 @@
   </div>
 </footer>
 
-  <!-- SEARCH ENGINE -->
   <script>
+/* 1. Popup Database */
+const tutorialData = {
+  cherax: {
+    title: "Cherax",
+    tags: "PAID • RECOMMEND • GTA 5 ONLINE",
+    desc: "The most powerful and reliable paid GTA V mod menu.",
+    embed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    download: "https://example.com/cherax-download",
+    website: "https://example.com/cherax-site"
+  },
+
+  yimv2: {
+    title: "YimMenu V2",
+    tags: "FREE • RECOMMEND • GTA 5 ONLINE",
+    desc: "Best free GTA5 Online menu for Enhanced Edition.",
+    embed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    download: "https://example.com/yimv2-download",
+    website: "https://example.com/yimv2-site"
+  },
+
+  legacy: {
+    title: "YimMenu (Legacy)",
+    tags: "FREE • GUIDE • GTA 5 ONLINE",
+    desc: "Guide for Legacy Edition.",
+    embed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    download: "https://example.com/legacy-download",
+    website: "https://example.com/legacy-site"
+  }
+};
+
+/* <!-- SEARCH ENGINE --> */
 /* 1. GET ELEMENTS */
 const searchInput = document.getElementById("searchInput");
 const cards = document.querySelectorAll(".tutorial-card");
@@ -818,27 +848,26 @@ const modalClose = document.getElementById("modalClose");
 document.querySelectorAll(".more-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     const id = btn.dataset.id;
+    const t = tutorialData[id];
 
-    // You can customize content per tutorial here:
     modalContent.innerHTML = `
-      <h2>${id.toUpperCase()}</h2>
+      <h2>${t.title}</h2>
 
       <iframe width="100%" height="315"
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        src="${t.embed}"
         allowfullscreen></iframe>
 
-      <p style="margin-top:15px;">
-        Extra details about ${id} go here.
-      </p>
+      <p style="margin-top:15px;">${t.desc}</p>
 
-      <a href="#" class="download-btn">Download</a>
-      <a href="#" class="download-btn">Visit Website</a>
+      <a href="${t.download}" class="download-btn">Download</a>
+      <a href="${t.website}" class="download-btn">Visit Website</a>
     `;
 
     modal.classList.add("active");
     modalOverlay.classList.add("active");
   });
 });
+
 
 modalClose.addEventListener("click", () => {
   modal.classList.remove("active");
