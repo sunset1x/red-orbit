@@ -901,7 +901,7 @@ const tutorialData = {
     embed: "https://www.youtube.com/embed/ddmhUIjrmoU",
     type: "free",
     download: "https://loot-link.com/s?GWDxHyNk",
-    website: "",
+    website: "https://none",
     discord: "https://discord.gg/bHy6eRMNeV"
   },
 
@@ -1060,25 +1060,7 @@ document.querySelectorAll(".more-btn").forEach(btn => {
 
     }
 
-    modalContent.innerHTML = `
-      <h2>${t.title}</h2>
-
-      <iframe width="100%" height="315"
-        src="${t.embed}"
-        allowfullscreen></iframe>
-
-      <p style="margin-top:15px;">${t.desc}</p>
-
-      <div class="modal-buttons">
-        ${buttons}
-      </div>
-    `;
-
-    modal.classList.add("active");
-    modalOverlay.classList.add("active");
-  });
-    
-/*    modalContent.innerHTML = `
+        modalContent.innerHTML = `
       <h2>${t.title}</h2>
     
       <iframe width="100%" height="315"
@@ -1107,7 +1089,7 @@ document.querySelectorAll(".more-btn").forEach(btn => {
     modalOverlay.classList.add("active");
   });
 });
-*/
+
 
 modalClose.addEventListener("click", () => {
   modal.classList.remove("active");
