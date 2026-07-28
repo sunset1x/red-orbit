@@ -165,6 +165,87 @@
     .btn-discord:hover {
       background: #6f7aff;
     }
+
+        /* FEATURED GAME OF THE WEEK CARD */
+    .featured-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.42);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      max-width: 500px;
+      margin: -10 auto; /* keeps it centered */
+      animation: weeklySpotlight 4s ease-in-out infinite,
+                 fadeInWeekly 1.2s ease forwards;
+    }
+    
+    /* Featured video embed */
+    .featured-video {
+      width: 100%;
+      height: 240px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    
+    .featured-video iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    /* Featured badge */
+    .featured-badge {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: var(--accent);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+        
+    /* Featured text */
+    .featured-tags {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: var(--accent-soft);
+      letter-spacing: 0.05em;
+    }
+    
+    .featured-title {
+      font-size: 1.35rem;
+      font-weight: 600;
+    }
+    
+    .featured-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    
+    /* Button */
+    .featured-button {
+      display: inline-block;
+      padding: 10px 16px;
+      background: var(--accent);
+      color: white;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 600;
+      transition: 0.15s ease;
+    }
+    
+    .featured-button:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
     
     /* Custom Badges */
     .new-badge {
@@ -326,120 +407,6 @@
   margin-bottom: 0.2px;
   line-height: 1.55;
 }
-
-/* FEATURED CAROUSEL WRAPPER */
-.featured-carousel {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-  height: 360px; /* your original card height */
-  margin: 60px auto;
-  pointer-events: none; /* prevents layout interference */
-}
-
-/* FEATURED CARD — EXACT original size */
-.featured-card {
-  position: absolute;
-  width: 420px;          /* your original width */
-  height: 360px;         /* your original height */
-  background: var(--bg-alt);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius-md);
-  box-shadow: 0 14px 32px rgba(0,0,0,0.42);
-  padding: 24px;
-  text-align: center;
-  transition: transform 0.45s ease, opacity 0.45s ease;
-  cursor: pointer;
-  pointer-events: auto; /* re-enable clicking */
-}
-
-/* BADGE */
-.featured-badge {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  background: var(--accent);
-  color: white;
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-}
-
-/* EMBED VIDEO — EXACT original size */
-.featured-video {
-  width: 100%;
-  height: 240px;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 12px;
-}
-
-.featured-video iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* TEXT */
-.featured-tags {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  color: var(--accent-soft);
-  letter-spacing: 0.05em;
-}
-
-.featured-title {
-  font-size: 1.35rem;
-  font-weight: 600;
-  margin-top: 6px;
-}
-
-.featured-desc {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  line-height: 1.55;
-  margin-top: 6px;
-}
-
-/* BUTTON — your original style */
-.featured-button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 16px;
-  background: var(--accent);
-  color: white;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: 0.15s ease;
-}
-
-.featured-button:hover {
-  background: var(--accent-hover);
-  transform: translateY(-2px);
-}
-
-/* ACTIVE (CENTER) */
-.featured-card.active {
-  transform: translateX(0) scale(1.15);
-  z-index: 3;
-  opacity: 1;
-}
-
-/* LEFT */
-.featured-card.left {
-  transform: translateX(-360px) scale(0.9);
-  z-index: 2;
-  opacity: 0.7;
-}
-
-/* RIGHT */
-.featured-card.right {
-  transform: translateX(360px) scale(0.9);
-  z-index: 2;
-  opacity: 0.7;
-}
     
     /* FOOTER */
     footer {
@@ -474,68 +441,21 @@
           </div>
         </div>
         
+      <div class="featured-badge">RECOMMENDED</div>
+      <div class="featured-tags">GAME OF THE WEEK</div>
+      <div class="featured-title">GTA V Story Mode Mods</div>
+      <div class="featured-desc">
+        Hand‑picked modding setup that’s stable, safe, and beginner‑friendly.  
+        Updated weekly based on community feedback and new releases.
+      </div>
+    
+      <a href="#" class="featured-button">View Full Guide</a>
+    </div>
+        
     </div>
 
       </div>
     </header>
-
-<section class="featured">
-  <div class="featured-carousel">
-
-    <!-- CARD 1 -->
-    <div class="featured-card" data-index="0">
-      <span class="featured-badge">NEW</span>
-
-      <div class="featured-video">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-      </div>
-
-      <div class="featured-tags">GAME OF THE WEEK</div>
-      <div class="featured-title">GTA V Story Mode Mods</div>
-      <div class="featured-desc">
-        Beginner-friendly, stable, and curated weekly.
-      </div>
-
-      <a class="featured-button" href="#">View Full Guide</a>
-    </div>
-
-    <!-- CARD 2 -->
-    <div class="featured-card" data-index="1">
-      <span class="featured-badge">NEW</span>
-
-      <div class="featured-video">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-      </div>
-
-      <div class="featured-tags">GAME OF THE WEEK</div>
-      <div class="featured-title">R6 Performance Boost</div>
-      <div class="featured-desc">
-        FPS-focused tweaks for smoother gameplay.
-      </div>
-
-      <a class="featured-button" href="#">View Full Guide</a>
-    </div>
-
-    <!-- CARD 3 -->
-    <div class="featured-card" data-index="2">
-      <span class="featured-badge">NEW</span>
-
-      <div class="featured-video">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-      </div>
-
-      <div class="featured-tags">GAME OF THE WEEK</div>
-      <div class="featured-title">COD Optimization Pack</div>
-      <div class="featured-desc">
-        Cleaner visuals, better aim feel, lower latency.
-      </div>
-
-      <a class="featured-button" href="#">View Full Guide</a>
-    </div>
-
-  </div>
-</section>
-
   
     <main>
       <section id="tutorials">
