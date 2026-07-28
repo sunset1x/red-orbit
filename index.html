@@ -168,13 +168,13 @@
       gap: 14px;
     }
 
-.theme-container {
+    .theme-container {
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 9999;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse; /* THIS MAKES IT GO UP */
   align-items: flex-end;
   gap: 8px;
 }
@@ -197,7 +197,7 @@
       color: #fff;
     }
     
-    /* ⬇️ Dropdown (hidden until button click) */
+    /* ⬆️ Dropdown now appears ABOVE the button */
     .theme-dropdown {
       background: var(--bg-alt);
       color: var(--text-main);
@@ -208,7 +208,7 @@
       cursor: pointer;
       box-shadow: var(--shadow-sm);
       transition: 0.2s ease;
-      display: none; /* hidden by default */
+      display: none;
     }
     
     .theme-dropdown.show {
