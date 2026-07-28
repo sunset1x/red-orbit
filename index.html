@@ -125,11 +125,16 @@
 
     @media (max-width: 800px) {
       .hero {
-        display: grid;
         grid-template-columns: 1fr;
       }
     }
 
+    .hero-title {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    
     .hero-main h1 {
       font-size: 2.8rem;
       margin-bottom: 10px;
@@ -823,7 +828,7 @@
     <header>
       <div class="tagline">STORY MODE ONLY · TUTORIALS BY TEMPEST MODZ</div>
 
-      <div class="hero">
+      <div class="hero-title">
         <div class="titel-gradient">
           <h1>Tempest Modz</h1>
           <p>
@@ -831,6 +836,7 @@
             I actually use — plus the videos that walk you through them. No shady links, no online
             nonsense. Just the stuff that works.
           </p>
+          <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
           <div class="hero-actions">
             <a href="#tutorials" class="btn btn-primary" id="browseMenuBtn">Browse the menus</a>
