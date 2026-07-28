@@ -134,7 +134,27 @@
       font-weight: 800;
       margin-bottom: 10px;
     }
+
+    .hero-main h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
     
+      /* THEME‑DRIVEN GRADIENT */
+      background: linear-gradient(
+        90deg,
+        var(--accent),
+        var(--accent-soft),
+        var(--accent-pink)
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    
+      /* PREVENT LAYOUT BREAK */
+      display: inline-block;
+    }
+
+    /*
     .hero-main h1 {
       font-size: 2.8rem;
       margin-bottom: 10px;
@@ -142,19 +162,7 @@
       -webkit-background-clip: text;
       color: transparent;
     }
-
-    .title-gradient {
-      background: linear-gradient(
-        90deg,
-        var(--accent),
-        var(--accent-soft),
-        var(--accent-pink)
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: inline-block; /* prevents layout break */
-    }
-    
+*/
     .hero-main p {
       color: var(--text-muted);
       line-height: 1.6;
