@@ -196,6 +196,30 @@
       transform: translateY(-2px);
     }
 
+   .theme-selector {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+    
+    #themeDropdown {
+      background: var(--bg-alt);
+      color: var(--text-main);
+      border: 1px solid var(--card-border);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: 0.2s ease;
+    }
+    
+    #themeDropdown:hover {
+      background: var(--accent-soft);
+      color: #fff;
+    }
+
     
     .btn {
       padding: 10px 18px;
@@ -1034,7 +1058,14 @@
   <div class="footer-inner">
     © 2026 Tempest Modz — Story Mode only.<br>Not affiliated with Rockstar Games or Take‑Two Interactive.
   </div>
-    <div id="themeButton" class="theme-btn">🎨</div>
+    <div class="theme-selector">
+  <select id="themeDropdown">
+    <option value="theme-tempest">Tempest Aquatic</option>
+    <option value="theme-purple">Purple</option>
+    <option value="theme-blood">Blood Red</option>
+  </select>
+</div>
+
 </footer>
 
   <script>
@@ -1289,19 +1320,18 @@ modalOverlay.addEventListener("click", () => {
     let currentTheme = localStorage.getItem("theme") || "theme-purple";
     
     document.body.classList.add(currentTheme);
+    document.getElementById("themeDropdown").value = currentTheme;
     
-    function switchTheme() {
-      const index = themeOrder.indexOf(currentTheme);
-      const nextTheme = themeOrder[(index + 1) % themeOrder.length];
+    document.getElementById("themeDropdown").addEventListener("change", (e) => {
+      const newTheme = e.target.value;
     
       document.body.classList.remove(currentTheme);
-      document.body.classList.add(nextTheme);
+      document.body.classList.add(newTheme);
     
-      currentTheme = nextTheme;
-      localStorage.setItem("theme", nextTheme);
-    }
-    
-    document.getElementById("themeButton").addEventListener("click", switchTheme);
+      currentTheme = newTheme;
+      localStorage.setItem("theme", newTheme);
+    });
+
 
     
 </script>
