@@ -653,9 +653,9 @@
       <button class="page-btn" data-page="3">3</button>
     </div>
   </div>
-        
-    </main>
 
+  
+    </main>
     <footer>
       © 2026 Tempest Modz — Story Mode only.  
       Not affiliated with Rockstar Games or Take‑Two Interactive.
@@ -731,11 +731,12 @@
   const ease = 0.08;
 
   function smoothScroll() {
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
     currentScroll += (scrollTarget - currentScroll) * ease;
 
-    // Prevent cutoff at bottom
-    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
     if (currentScroll > maxScroll) currentScroll = maxScroll;
+    if (scrollTarget > maxScroll) scrollTarget = maxScroll;
 
     window.scrollTo(0, currentScroll);
     requestAnimationFrame(smoothScroll);
@@ -746,13 +747,13 @@
 
     scrollTarget += e.deltaY;
 
-    // Clamp target properly
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
     scrollTarget = Math.max(0, Math.min(scrollTarget, maxScroll));
   }, { passive: false });
 
   smoothScroll();
 </script>
+
 
 
 
