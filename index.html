@@ -154,66 +154,52 @@
       display: inline-block;
     }
 
-    .hero-main p {
-      color: var(--text-muted);
-      line-height: 1.6;
-      max-width: 520px;
-    }
-
-    /* BUTTONS */
-    .hero-actions {
-      margin-top: 24px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .theme-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-  display: flex;
-  flex-direction: column-reverse; /* THIS MAKES IT GO UP */
-  align-items: flex-end;
-  gap: 8px;
-}
-
-    /* 🎨 Theme Button */
-    .theme-btn {
-      background: var(--bg-alt);
-      color: var(--text-main);
-      border: 1px solid var(--card-border);
-      padding: 10px 14px;
-      border-radius: 10px;
-      font-size: 20px;
-      cursor: pointer;
-      box-shadow: var(--shadow-sm);
-      transition: 0.2s ease;
-    }
+        .hero-main p {
+          color: var(--text-muted);
+          line-height: 1.6;
+          max-width: 520px;
+        }
     
-    .theme-btn:hover {
-      background: var(--accent-soft);
-      color: #fff;
-    }
+        /* BUTTONS */
+        .hero-actions {
+          margin-top: 24px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 14px;
+        }
     
-    /* ⬆️ Dropdown now appears ABOVE the button */
-    .theme-dropdown {
-      background: var(--bg-alt);
-      color: var(--text-main);
-      border: 1px solid var(--card-border);
-      padding: 8px 12px;
-      border-radius: 8px;
-      font-size: 14px;
-      cursor: pointer;
-      box-shadow: var(--shadow-sm);
-      transition: 0.2s ease;
-      display: none;
-    }
+            .theme-container {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          z-index: 9999;
+          display: flex;
+          flex-direction: column-reverse; /* THIS MAKES IT GO UP */
+          align-items: flex-end;
+          gap: 8px;
+        }
     
-    .theme-dropdown.show {
-      display: block;
-    }
+          .theme-btn {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: var(--bg-alt);
+          color: var(--text-main);
+          border: 1px solid var(--card-border);
+          padding: 10px 14px;
+          border-radius: 10px;
+          font-size: 20px;
+          cursor: pointer;
+          box-shadow: var(--shadow-sm);
+          transition: 0.2s ease;
+          z-index: 9999;
+        }
+        
+        .theme-btn:hover {
+          background: var(--accent-soft);
+          color: #fff;
+        }
+
 
 
     
@@ -1055,14 +1041,7 @@
     © 2026 Tempest Modz — Story Mode only.<br>Not affiliated with Rockstar Games or Take‑Two Interactive.
   </div>
     
-    <div class="theme-container">
-  <button id="themeButton" class="theme-btn">🎨</button>
-
-  <select id="themeDropdown" class="theme-dropdown">
-    <option value="theme-tempest">Tempest Aquatic</option>
-    <option value="theme-purple">Purple</option>
-    <option value="theme-blood">Blood Red</option>
-  </select>
+ <button id="themeButton" class="theme-btn">🎨</button>
       
 </div>
 
