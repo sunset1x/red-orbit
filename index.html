@@ -686,19 +686,52 @@
 </footer>
   <!-- SEARCH ENGINE -->
   <script>
-  const searchInput = document.getElementById("searchInput");
-  const cards = document.querySelectorAll(".tutorial-card");
+/* 1. GET ELEMENTS */
+const searchInput = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".tutorial-card");
+let currentPage = 1;
+const cardsPerPage = 6;
 
-  searchInput.addEventListener("input", () => {
-    const query = searchInput.value.toLowerCase();
+/* 2. GLOBAL SEARCH (works across ALL pages) */
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase();
 
-    cards.forEach(card => {
-      const tags = card.dataset.tags.toLowerCase();
-      const match = tags.includes(query);
-
-      card.style.display = match ? "block" : "none";
-    });
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    card.style.display = text.includes(query) ? "block" : "none";
   });
+
+  // Hide pagination while searching
+  if (query.length > 0) {
+    document.querySelector(".pagination").style.display = "none";
+  } else {
+    document.querySelector(".pagination").style.display = "flex";
+    applyPagination(currentPage);   // restore correct page
+  }
+});
+
+/* 3. PAGINATION FUNCTION */
+function applyPagination(page) {
+  currentPage = page;
+
+  const start = (page - 1) * cardsPerPage;
+  const end = start + cardsPerPage;
+
+  cards.forEach((card, index) => {
+    card.style.display = (index >= start && index < end) ? "block" : "none";
+  });
+}
+
+/* 4. PAGINATION BUTTONS */
+document.querySelectorAll(".page-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const page = Number(btn.dataset.page);
+    applyPagination(page);
+  });
+});
+
+/* 5. INITIAL PAGE LOAD */
+applyPagination(1);
 
   function updateTutorialCount() {
     const cards = document.querySelectorAll('.tutorial-card');
@@ -719,34 +752,6 @@
 
   updateTutorialCount();
     
-</script>
-  <script>   // Page setup
-  const tutorials = document.querySelectorAll('.tutorial-card');
-  const pageButtons = document.querySelectorAll('.page-btn');
-  const perPage = 6;
-
-  function showPage(page) {
-    const start = (page - 1) * perPage;
-    const end = start + perPage;
-
-    tutorials.forEach((card, index) => {
-      card.style.display = (index >= start && index < end) ? 'block' : 'none';
-    });
-
-    pageButtons.forEach(btn => btn.classList.remove('active'));
-    document.querySelector(`.page-btn[data-page="${page}"]`).classList.add('active');
-  }
-
-  pageButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const page = parseInt(btn.dataset.page);
-      showPage(page);
-    });
-  });
-
-  // Load page 1 by default
-  showPage(1);
-
 </script>
   <script>  // Mouse scroll
   let scrollTarget = window.pageYOffset;
