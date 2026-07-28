@@ -681,6 +681,34 @@
   updateTutorialCount();
     
 </script>
+  <script>
+  const tutorials = document.querySelectorAll('.tutorial-card');
+  const pageButtons = document.querySelectorAll('.page-btn');
+  const perPage = 6;
+
+  function showPage(page) {
+    const start = (page - 1) * perPage;
+    const end = start + perPage;
+
+    tutorials.forEach((card, index) => {
+      card.style.display = (index >= start && index < end) ? 'block' : 'none';
+    });
+
+    pageButtons.forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`.page-btn[data-page="${page}"]`).classList.add('active');
+  }
+
+  pageButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const page = parseInt(btn.dataset.page);
+      showPage(page);
+    });
+  });
+
+  // Load page 1 by default
+  showPage(1);
+</script>
+
 
 
 
