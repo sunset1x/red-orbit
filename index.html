@@ -154,15 +154,6 @@
       display: inline-block;
     }
 
-    /*
-    .hero-main h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-      background: var(--text-main);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-*/
     .hero-main p {
       color: var(--text-muted);
       line-height: 1.6;
@@ -177,33 +168,37 @@
       gap: 14px;
     }
 
+.theme-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+    /* 🎨 Theme Button */
     .theme-btn {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #222;
-      color: #fff;
-      padding: 8px 12px;
-      border-radius: 6px;
+      background: var(--bg-alt);
+      color: var(--text-main);
+      border: 1px solid var(--card-border);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 20px;
       cursor: pointer;
-      font-size: 18px;
-      z-index: 9999;
+      box-shadow: var(--shadow-sm);
       transition: 0.2s ease;
     }
     
     .theme-btn:hover {
-      background: #333;
-      transform: translateY(-2px);
-    }
-
-   .theme-selector {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 9999;
+      background: var(--accent-soft);
+      color: #fff;
     }
     
-    #themeDropdown {
+    /* ⬇️ Dropdown (hidden until button click) */
+    .theme-dropdown {
       background: var(--bg-alt);
       color: var(--text-main);
       border: 1px solid var(--card-border);
@@ -213,12 +208,13 @@
       cursor: pointer;
       box-shadow: var(--shadow-sm);
       transition: 0.2s ease;
+      display: none; /* hidden by default */
     }
     
-    #themeDropdown:hover {
-      background: var(--accent-soft);
-      color: #fff;
+    .theme-dropdown.show {
+      display: block;
     }
+
 
     
     .btn {
@@ -1058,12 +1054,19 @@
   <div class="footer-inner">
     © 2026 Tempest Modz — Story Mode only.<br>Not affiliated with Rockstar Games or Take‑Two Interactive.
   </div>
-    <div class="theme-selector">
-  <select id="themeDropdown">
+    
+    <div class="theme-container">
+  <button id="themeButton" class="theme-btn">🎨</button>
+
+  <select id="themeDropdown" class="theme-dropdown">
     <option value="theme-tempest">Tempest Aquatic</option>
     <option value="theme-purple">Purple</option>
     <option value="theme-blood">Blood Red</option>
   </select>
+      
+</div>
+
+      
 </div>
 
 </footer>
