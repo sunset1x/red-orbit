@@ -461,6 +461,18 @@
       margin-bottom: 0px;   /* tighten space BELOW buttons */
       padding: 0;            /* remove any inherited padding */
     }
+
+   .page-arrow {
+      background: linear-gradient(135deg, #4a3aff, #7b2cff);
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      font-size: 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(123, 44, 255, 0.4);
+      transition: 0.2s ease;
+    }  
       
     .page-btn {
       background: var(--bg-alt);
@@ -954,12 +966,31 @@ function applyPagination(page) {
 }
 
 /* 4. PAGINATION BUTTONS */
-document.querySelectorAll(".page-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const page = Number(btn.dataset.page);
-    applyPagination(page);
-  });
+const pagePrev = document.getElementById("pagePrev");
+const pageNext = document.getElementById("pageNext");
+const pageNumber = document.getElementById("pageNumber");
+
+function updatePageNumber() {
+  pageNumber.textContent = currentPage;
+}
+
+pagePrev.addEventListener("click", () => {
+  if (currentPage > 1) {
+    currentPage--;
+    applyPagination(currentPage);
+    updatePageNumber();
+  }
 });
+
+pageNext.addEventListener("click", () => {
+  const totalPages = Math.ceil(cards.length / cardsPerPage);
+  if (currentPage < totalPages) {
+    currentPage++;
+    applyPagination(currentPage);
+    updatePageNumber();
+  }
+});
+
 
 /* 5. INITIAL PAGE LOAD */
 applyPagination(1);
