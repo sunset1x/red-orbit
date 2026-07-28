@@ -1051,13 +1051,13 @@ document.querySelectorAll(".more-btn").forEach(btn => {
     // FREE MENU → Download
     if (t.type === "free" && t.download) {
       buttons += `
-        <a href="${t.download}" class="btn-download" target="_blank" id="dynamicDownloadBtn">
+        <a href="${t.download}" class="btn-download" target="_blank">
           <img src="https://raw.githubusercontent.com/sunset1x/red-orbit/refs/heads/main/images/downloadd.png" class="icon">
           <span class="download-text">Download</span>
         </a>
+        
       `;
     }
-
     // PAID MENU → Purchase
     if (t.type === "paid" && t.purchase) {
       buttons += `
@@ -1100,18 +1100,6 @@ document.querySelectorAll(".more-btn").forEach(btn => {
         ${buttons}
       </div>
     `;
-
-// After modalContent.innerHTML
-if (t.triggerScript) {
-  const btn = document.getElementById("dynamicDownloadBtn");
-
-  btn.addEventListener("click", () => {
-    const script = document.createElement("script");
-    script.src = "//dcbbwymp1bhlf.cloudfront.net/?wbbcd=1483619";
-    script.setAttribute("data-cfasync", "false");
-    document.body.appendChild(script);
-  });
-}
     
     modal.classList.add("active");
     modalOverlay.classList.add("active");
