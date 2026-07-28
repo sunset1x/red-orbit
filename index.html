@@ -211,22 +211,30 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
 
-    /* Badge Shine Animation */
+    /* Shine element */
     .badge-shine {
       position: absolute;
       top: 0;
-      left: -50%;
+      left: -60%;
       width: 50%;
       height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.55),
+        transparent
+        );
       transform: skewX(-20deg);
-      animation: shineMove 2.5s infinite;
-    }
-    
-    @keyframes shineMove {
-      0% { left: -50%; }
-      100% { left: 150%; }
-    }
+      animation: shineSweep 2.4s infinite;
+      pointer-events: none;
+      border-radius: inherit;
+      }
+
+      /* Shine animation */
+      @keyframes shineSweep {
+        0% { left: -60%; }
+        100% { left: 160%; }
+      }
     
     /* Featured text */
     .featured-tags {
@@ -465,7 +473,8 @@
             allowfullscreen></iframe>
   </div>
 
-  <div class="featured-badge">RECOMMENDED<span class="badge-shine"></span> </div>
+<div class="featured-badge">RECOMMENDED<span class="badge-shine"></span>
+</div>
   <div class="featured-tags">GAME OF THE WEEK</div>
   <div class="featured-title">GTA V Story Mode Mods</div>
   <div class="featured-desc">
