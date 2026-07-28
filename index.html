@@ -477,6 +477,69 @@
     }
 
 
+        .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(4px);
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.25s ease;
+        z-index: 1000;
+      }
+      
+      .modal-overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      
+      .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        background: #111;
+        padding: 25px;
+        width: min(90%, 600px);
+        border-radius: 12px;
+        opacity: 0;
+        transition: 0.25s ease;
+        z-index: 1001;
+        border: 1px solid rgba(255,255,255,0.1);
+      }
+      
+      .modal.active {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      
+      .modal-close {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 28px;
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        cursor: pointer;
+      }
+      
+      .more-btn {
+        margin-top: 12px;
+        padding: 8px 14px;
+        background: #d62828;
+        border: none;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      
+      .more-btn:hover {
+        background: #b71f1f;
+      }
+
+
     /* FOOTER */
     .footer {
       margin-top: 50px;
@@ -579,6 +642,7 @@
     <div class="tutorial-desc">
       The most powerful and reliable paid GTA V mod menu for those willing to spend.
     </div>
+    <button class="more-btn" data-id="cherax">MORE</button>
   </div>
 
   <!-- CARD 2 -->
@@ -593,6 +657,7 @@
     <div class="tutorial-desc">
       A full guide to the best free GTA5 Online menu for Enhanced Edition.
     </div>
+    <button class="more-btn" data-id="v2">MORE</button>
   </div>
 
   <!-- CARD 3 -->
@@ -602,11 +667,12 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen></iframe>
     </div>
-    <div class="tutorial-tags">FREE • GUIDE • GTA 5 ONLINE</div>
+    <div class="tutorial-tags">PAID • INSTALL • GTA 5 ONLINE</div>
     <div class="tutorial-title">0xCheats</div>
     <div class="tutorial-desc">
       An outstanding mod menu with dozens of features that is still undergoing testing.
     </div>
+    <button class="more-btn" data-id="cherax">0xcheats</button>
   </div>
   
   <!-- CARD 4 -->
@@ -621,6 +687,7 @@
     <div class="tutorial-desc">
       A full guide to the best free GTA5 Online menu for Legacy Edition.
     </div>
+    <button class="more-btn" data-id="v1">MORE</button>
   </div>
 
   <!-- CARD 5 -->
@@ -635,6 +702,7 @@
     <div class="tutorial-desc">
       A full guide to the most iconic free GTA5 Online menu for Legacy Edition.
     </div>
+    <button class="more-btn" data-id="kiddions">MORE</button>
   </div>
   
   <!-- CARD 6 -->
@@ -649,6 +717,7 @@
     <div class="tutorial-desc">
       A full guide to the best free GTA5 Online menu for Legacy Edition.
     </div>
+    <button class="more-btn" data-id="crap">MORE</button>
   </div>
 
   <!-- CARD 7 -->
@@ -677,6 +746,13 @@
     </main>
     
       </div>
+
+<div id="modalOverlay" class="modal-overlay"></div>
+
+<div id="modal" class="modal">
+  <button id="modalClose" class="modal-close">×</button>
+  <div id="modalContent"></div>
+</div>
   
   <footer class="site-footer">
   <div class="footer-inner">
@@ -684,6 +760,7 @@
     Not affiliated with Rockstar Games or Take‑Two Interactive.
   </div>
 </footer>
+
   <!-- SEARCH ENGINE -->
   <script>
 /* 1. GET ELEMENTS */
@@ -732,6 +809,47 @@ document.querySelectorAll(".page-btn").forEach(btn => {
 
 /* 5. INITIAL PAGE LOAD */
 applyPagination(1);
+
+    const modal = document.getElementById("modal");
+const modalOverlay = document.getElementById("modalOverlay");
+const modalContent = document.getElementById("modalContent");
+const modalClose = document.getElementById("modalClose");
+
+document.querySelectorAll(".more-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const id = btn.dataset.id;
+
+    // You can customize content per tutorial here:
+    modalContent.innerHTML = `
+      <h2>${id.toUpperCase()}</h2>
+
+      <iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        allowfullscreen></iframe>
+
+      <p style="margin-top:15px;">
+        Extra details about ${id} go here.
+      </p>
+
+      <a href="#" class="download-btn">Download</a>
+      <a href="#" class="download-btn">Visit Website</a>
+    `;
+
+    modal.classList.add("active");
+    modalOverlay.classList.add("active");
+  });
+});
+
+modalClose.addEventListener("click", () => {
+  modal.classList.remove("active");
+  modalOverlay.classList.remove("active");
+});
+
+modalOverlay.addEventListener("click", () => {
+  modal.classList.remove("active");
+  modalOverlay.classList.remove("active");
+});
+
 
   function updateTutorialCount() {
     const cards = document.querySelectorAll('.tutorial-card');
