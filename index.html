@@ -65,6 +65,38 @@
       --card-border: rgba(255, 0, 0, 0.15);
     }
 
+    /* ⚡ Tempest Ultra — Animated Modern Theme */
+    .theme-ultra {
+      --bg: linear-gradient(180deg, #02040a 0%, #04101f 100%);
+      --bg-alt: #04101f;
+    
+      --accent: #00eaff;
+      --accent-soft: #0094cc;
+      --accent-pink: #00c8ff;
+    
+      --text-main: #e8faff;
+      --text-muted: #9ac7d1;
+      --card-border: rgba(0, 200, 255, 0.2);
+    
+      /* Glow variables */
+      --glow-strong: 0 0 25px rgba(0, 200, 255, 0.6);
+      --glow-soft: 0 0 12px rgba(0, 200, 255, 0.35);
+    }
+    
+  /* Animated gradient background */
+    .theme-ultra body,
+      body.theme-ultra {
+        background: linear-gradient(180deg, #02040a, #04101f, #06283b);
+        background-size: 400% 400%;
+        animation: ultraGradient 18s ease infinite;
+    }
+
+    @keyframes ultraGradient {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 100% 100%; }
+      100% { background-position: 0% 0%; }
+    }
+
     
     body {
       font-family: "Inter", system-ui, sans-serif;
@@ -841,6 +873,31 @@
       max-width: 900px;
       margin: 0 auto;
       line-height: 1.6;
+    }
+
+    .theme-ultra .btn,
+    .theme-ultra .btn-primary,
+    .theme-ultra .btn-ghost,
+    .theme-ultra .btn-discord2 {
+      box-shadow: var(--glow-soft);
+      transition: 0.25s ease;
+    }
+    
+    .theme-ultra .btn:hover,
+    .theme-ultra .btn-primary:hover,
+    .theme-ultra .btn-ghost:hover,
+    .theme-ultra .btn-discord2:hover {
+      box-shadow: var(--glow-strong);
+      transform: translateY(-2px);
+    }
+    
+    .theme-ultra .card {
+      box-shadow: var(--glow-soft);
+      border-color: var(--card-border);
+    }
+    
+    .theme-ultra .hero-main h1 {
+      text-shadow: 0 0 20px rgba(0, 200, 255, 0.5);
     }
     
   </style>
