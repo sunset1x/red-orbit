@@ -533,21 +533,31 @@
         cursor: pointer;
       }
       
-      .more-btn {
-        align-self: flex-end;   /* moves button to the right */
-        margin-top: 12px;
-        padding: 8px 14px;
-        background: #d62828;
-        border: none;
-        color: white;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: 0.2s;
-      }
-      
-      .more-btn:hover {
-        background: #b71f1f;
-      }
+    .more-btn {
+      align-self: flex-end;                 /* right side of card */
+      margin-top: 12px;
+      padding: 8px 16px;
+      background: linear-gradient(135deg, #4a3aff, #7b2cff); /* Tempest gradient */
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    
+      box-shadow: 0 0 12px rgba(123, 44, 255, 0.4);          /* purple glow */
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .more-btn:hover {
+      transform: translateY(-2px);                           /* lift effect */
+      box-shadow: 0 0 18px rgba(123, 44, 255, 0.6);          /* stronger glow */
+    }
+    
+    .more-btn:active {
+      transform: scale(0.96);                                /* press effect */
+    }
+
 
 
     /* FOOTER */
