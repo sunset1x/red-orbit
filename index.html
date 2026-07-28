@@ -1101,11 +1101,6 @@ document.querySelectorAll(".more-btn").forEach(btn => {
       </div>
     `;
 
-    modal.classList.add("active");
-    modalOverlay.classList.add("active");
-  });
-});
-
 // After modalContent.innerHTML
 if (t.triggerScript) {
   const btn = document.getElementById("dynamicDownloadBtn");
@@ -1117,6 +1112,11 @@ if (t.triggerScript) {
     document.body.appendChild(script);
   });
 }
+    
+    modal.classList.add("active");
+    modalOverlay.classList.add("active");
+  });
+});
 
 
 modalClose.addEventListener("click", () => {
