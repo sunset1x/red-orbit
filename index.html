@@ -165,8 +165,8 @@
     .btn-discord:hover {
       background: #6f7aff;
     }
-
-        /* FEATURED GAME OF THE WEEK CARD */
+    
+    /* FEATURED GAME OF THE WEEK CARD */
     .featured-card {
       background: var(--bg-alt);
       border: 1px solid var(--card-border);
@@ -246,7 +246,7 @@
       background: var(--accent-hover);
       transform: translateY(-2px);
     }
-    
+
     /* Custom Badges */
     .new-badge {
       background: var(--accent);
@@ -407,7 +407,7 @@
   margin-bottom: 0.2px;
   line-height: 1.55;
 }
-    
+
     /* FOOTER */
     footer {
       margin-top: 50px;
@@ -440,23 +440,28 @@
             <a href="https://discord.gg/YOURSERVER" target="_blank" class="btn-discord">Join Discord</a>
           </div>
         </div>
-        
-      <div class="featured-badge">RECOMMENDED</div>
-      <div class="featured-tags">GAME OF THE WEEK</div>
-      <div class="featured-title">GTA V Story Mode Mods</div>
-      <div class="featured-desc">
-        Hand‑picked modding setup that’s stable, safe, and beginner‑friendly.  
-        Updated weekly based on community feedback and new releases.
-      </div>
-    
-      <a href="#" class="featured-button">View Full Guide</a>
-    </div>
-        
-    </div>
+
+        <div class="featured-card">
+        <div class="featured-video">
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+  </div>
+
+  <div class="featured-badge">RECOMMENDED</div>
+  <div class="featured-tags">GAME OF THE WEEK</div>
+  <div class="featured-title">GTA V Story Mode Mods</div>
+  <div class="featured-desc">
+    Hand‑picked modding setup that’s stable, safe, and beginner‑friendly.  
+    Updated weekly based on community feedback and new releases.
+  </div>
+
+  <a href="#" class="featured-button">View Full Guide</a>
+</div>
 
       </div>
     </header>
-  
+
     <main>
       <section id="tutorials">
         <div class="section-header">
@@ -555,19 +560,6 @@
       A full guide to the best free GTA5 Online menu for Legacy Edition.
     </div>
   </div>
-  <!-- CARD 7 -->
-  <div class="tutorial-card" data-tags="free guide gta 5 online yimmenu legacy">
-    <div class="tutorial-video">
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-    </div>
-    <div class="tutorial-tags">FREE • GUIDE • GTA 5 ONLINE</div>
-    <div class="tutorial-title">YimMenu (Legacy)</div>
-    <div class="tutorial-desc">
-      A full guide to the best free GTA5 Online menu for Legacy Edition.
-    </div>
-  </div>
 
 </div>
       </section>
@@ -595,7 +587,6 @@
     });
   });
 
-    /* Live Counter */
   function updateTutorialCount() {
     const cards = document.querySelectorAll('.tutorial-card');
     const count = cards.length;
@@ -614,35 +605,8 @@
   }
 
   updateTutorialCount();
+    
 </script>
-  <script>
-  const cards = document.querySelectorAll('.featured-card');
-  let activeIndex = 0;
-
-  function updateCarousel() {
-    cards.forEach((card, i) => {
-      card.classList.remove('active', 'left', 'right');
-
-      if (i === activeIndex) {
-        card.classList.add('active');
-      } else if (i === (activeIndex - 1 + cards.length) % cards.length) {
-        card.classList.add('left');
-      } else if (i === (activeIndex + 1) % cards.length) {
-        card.classList.add('right');
-      }
-    });
-  }
-
-  cards.forEach((card, i) => {
-    card.addEventListener('click', () => {
-      activeIndex = i;
-      updateCarousel();
-    });
-  });
-
-  updateCarousel();
-</script>
-
 
 
 
