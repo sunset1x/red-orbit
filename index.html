@@ -34,9 +34,6 @@
       --text-main: #e8faff;
       --text-muted: #9ac7d1;
       --card-border: rgba(0, 200, 255, 0.15);
-
-      --glow-strong: 0 0 25px rgba(0, 200, 255, 0.6);
-      --glow-soft: 0 0 12px rgba(0, 200, 255, 0.35);
     }
     
     /* ⭐ THEME 2 — Purple (your current theme) */
@@ -67,39 +64,6 @@
       --text-muted: #b38b8b;
       --card-border: rgba(255, 0, 0, 0.15);
     }
-
-    /* ⚡ Tempest Ultra — Animated Modern Theme */
-    .theme-ultra {
-      --bg: linear-gradient(180deg, #02040a 0%, #04101f 100%);
-      --bg-alt: #04101f;
-    
-      --accent: #00eaff;
-      --accent-soft: #0094cc;
-      --accent-pink: #00c8ff;
-    
-      --text-main: #e8faff;
-      --text-muted: #9ac7d1;
-      --card-border: rgba(0, 200, 255, 0.2);
-    
-      /* Glow variables */
-      --glow-strong: 0 0 25px rgba(0, 200, 255, 0.6);
-      --glow-soft: 0 0 12px rgba(0, 200, 255, 0.35);
-    }
-    
-  /* Animated gradient background */
-    .theme-tempest body,
-      body.theme-ultra {
-        background: linear-gradient(180deg, #02040a, #04101f, #06283b);
-        background-size: 400% 400%;
-        animation: ultraGradient 18s ease infinite;
-    }
-
-    @keyframes ultraGradient {
-      0% { background-position: 0% 0%; }
-      50% { background-position: 100% 100%; }
-      100% { background-position: 0% 0%; }
-    }
-
     
     body {
       font-family: "Inter", system-ui, sans-serif;
@@ -282,21 +246,6 @@
         box-shadow: 0 0 14px rgba(88, 101, 242, 0.6);
         transform: translateY(-2px);
       }
-    
-    /*       
-      background: #5865F2;
-      color: #fff;
-      border-radius: 999px;
-      padding: 10px 18px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: 0.15s ease; 
-
-    */
     
     /* FEATURED GAME OF THE WEEK CARD */
     .featured-card {
@@ -691,7 +640,6 @@
         color: #fff;
         font-weight: 600;
         text-decoration: none;
-        box-shadow: 0 0 12px var(--accent-soft);
         transition: 0.2s ease;
       }
       
@@ -878,27 +826,6 @@
       line-height: 1.6;
     }
 
-    .theme-tempest .btn,
-    .theme-tempest .btn-primary,
-    .theme-tempest .btn-ghost,
-    .theme-tempest .btn-discord2 {
-      transition: 0.25s ease;
-    }
-    
-    .theme-tempest .btn:hover,
-    .theme-tempest .btn-primary:hover,
-    .theme-tempest .btn-ghost:hover,
-    .theme-tempest .btn-discord2:hover {
-      transform: translateY(-2px);
-    }
-    
-    .theme-tempest .card {
-      border-color: var(--card-border);
-    }
-    
-    .theme-tempest .hero-main h1 {
-      text-shadow: 0 0 20px rgba(0, 200, 255, 0.5);
-    }
     
   </style>
 </head>
