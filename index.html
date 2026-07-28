@@ -1103,6 +1103,14 @@ modalOverlay.addEventListener("click", () => {
   }, { passive: false });
 
   smoothScroll();
+
+    document.getElementById("browseMenuBtn").addEventListener("click", (e) => {
+  e.preventDefault(); // stop the broken anchor behavior
+
+  const section = document.querySelector("#tutorials");
+  scrollTarget = section.offsetTop; // smooth scroll using your custom engine
+});
+
 </script>
 
 
