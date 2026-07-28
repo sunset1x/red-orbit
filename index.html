@@ -506,11 +506,13 @@
         transition: 0.25s ease;
         z-index: 1001;
         border: 1px solid rgba(255,255,255,0.1);
+        pointer-events: none;   /* 🔥 key line */
       }
       
       .modal.active {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
+        pointer-events: auto;   /* 🔥 re-enable clicks only when visible */
       }
       
       .modal-close {
@@ -840,7 +842,7 @@ document.querySelectorAll(".page-btn").forEach(btn => {
 /* 5. INITIAL PAGE LOAD */
 applyPagination(1);
 
-    const modal = document.getElementById("modal");
+const modal = document.getElementById("modal");
 const modalOverlay = document.getElementById("modalOverlay");
 const modalContent = document.getElementById("modalContent");
 const modalClose = document.getElementById("modalClose");
