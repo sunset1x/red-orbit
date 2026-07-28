@@ -445,6 +445,36 @@
       line-height: 1.55;
     }
 
+     /* Page Function */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 30px;
+    }
+  
+    .page-btn {
+      background: var(--bg-alt);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.15s ease;
+    }
+  
+    .page-btn:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .page-btn.active {
+      background: var(--accent);
+      color: white;
+    }
+
+
     /* FOOTER */
     footer {
       margin-top: 50px;
@@ -598,6 +628,12 @@
       A full guide to the best free GTA5 Online menu for Legacy Edition.
     </div>
   </div>
+
+  <div class="pagination">
+  <button class="page-btn" data-page="1">1</button>
+  <button class="page-btn" data-page="2">2</button>
+  <button class="page-btn" data-page="3">3</button>
+</div>
 
 </div>
       </section>
