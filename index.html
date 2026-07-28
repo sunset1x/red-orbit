@@ -1137,7 +1137,11 @@ document.querySelectorAll(".more-btn").forEach(btn => {
         </a>
       `;
     }
-    
+
+
+    // FINAL POPUP CONTENT
+    modalContent.innerHTML = `
+      <h2>${t.title}</h2>
   // HELP TOOLTIP (clickable)
   if (t.type === "free" && t.helpTooltip && t.helpLink) {
     buttons += `
@@ -1147,12 +1151,6 @@ document.querySelectorAll(".more-btn").forEach(btn => {
       </a>
     `;
   }
-
-
-    // FINAL POPUP CONTENT
-    modalContent.innerHTML = `
-      <h2>${t.title}</h2>
-
       <iframe width="100%" height="315"
         src="${t.embed}"
         allowfullscreen></iframe>
