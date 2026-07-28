@@ -5,6 +5,7 @@
   <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/sunset1x/red-orbit/refs/heads/main/images/tmzlogo.png">
   <title>Tempest Modz – Tutorials</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
 
   <style>
     :root {
@@ -21,7 +22,6 @@
       --shadow-soft: 0 12px 28px rgba(0, 0, 0, 0.45);
       --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.35);
     }
-
     /* ⭐ THEME 1 — Tempest Aquatic */
     .theme-tempest {
       --bg: linear-gradient(180deg, #031018 0%, #06202c 100%);
@@ -79,6 +79,10 @@
   padding: 32px 60px;     /* THIS is the fix — adds left/right space */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+    
     /* Weekly rotation animation */
     @keyframes weeklySpotlight {
       0% {
@@ -1296,50 +1300,35 @@ document.getElementById("themeButton").addEventListener("click", () => {
 
 </script>
   <script>  // Mouse scroll
-let scrollTarget = window.pageYOffset;
-let currentScroll = window.pageYOffset;
-const ease = 0.12;
+let isScrolling = false;
 
-// MAIN LOOP
-function smoothScroll() {
-  currentScroll += (scrollTarget - currentScroll) * ease;
-  window.scrollTo(0, currentScroll);
-  requestAnimationFrame(smoothScroll);
-}
-smoothScroll();
-
-// DESKTOP WHEEL
 window.addEventListener("wheel", (e) => {
-  scrollTarget += e.deltaY;
+  if (isScrolling) return;
+
+  isScrolling = true;
+
+  const start = window.pageYOffset;
+  const end = start + e.deltaY * 0.6; // smooth multiplier
+
+  const duration = 300;
+  const startTime = performance.now();
+
+  function animateScroll(time) {
+    const progress = Math.min((time - startTime) / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3); // cubic easing
+
+    window.scrollTo(0, start + (end - start) * ease);
+
+    if (progress < 1) {
+      requestAnimationFrame(animateScroll);
+    } else {
+      isScrolling = false;
+    }
+  }
+
+  requestAnimationFrame(animateScroll);
 });
 
-// MOBILE TOUCH
-let touchStartY = 0;
-
-window.addEventListener("touchstart", (e) => {
-  touchStartY = e.touches[0].clientY;
-});
-
-window.addEventListener("touchmove", (e) => {
-  const touchY = e.touches[0].clientY;
-  const delta = touchStartY - touchY;
-  scrollTarget += delta;
-  touchStartY = touchY;
-});
-
-// LIMIT SCROLL RANGE
-function clampScroll() {
-  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-  scrollTarget = Math.max(0, Math.min(scrollTarget, maxScroll));
-}
-setInterval(clampScroll, 16);
-
-// BUTTON SCROLL
-document.getElementById("browseMenuBtn").addEventListener("click", (e) => {
-  e.preventDefault();
-  const section = document.querySelector("#tutorials");
-  scrollTarget = section.offsetTop;
-});
 
 </script>
 
