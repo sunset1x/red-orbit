@@ -275,7 +275,7 @@ document.getElementById("themeButton").addEventListener("click", () => {
   const iframe = document.getElementById("spotlightIframe");
 
   playBtn.addEventListener("click", () => {
-    iframe.src = "https://www.youtube.com/embed/VIDEO_ID?autoplay=1&mute=1";
+    iframe.src = "https://www.youtube.com/embed/nK_y97QGVQI?autoplay=1&mute=1";
     thumb.style.display = "none";
     video.classList.add("active");
   });
