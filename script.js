@@ -414,3 +414,22 @@ function setStatus(isOperational) {
     text.textContent = "Not Operational";
   }
 }
+
+/* ------------------------------
+         Update Status 
+------------------------------ */
+
+
+function getDaysAgo(dateString) {
+  const updatedDate = new Date(dateString);
+  const now = new Date();
+
+  const diffTime = now - updatedDate;
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+  if (diffDays === 0) return "Updated today";
+  if (diffDays === 1) return "Updated 1 day ago";
+  return `Updated ${diffDays} days ago`;
+}
+
+lastUpdated: "2026-07-14"
