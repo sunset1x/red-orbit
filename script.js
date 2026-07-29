@@ -360,9 +360,6 @@ document.getElementById("themeButton").addEventListener("click", () => {
 
 
 /* ------------------------------
-         Premium Popup
------------------------------- */
- /* ------------------------------
         Premium Popup Data
 ------------------------------ */
 
@@ -399,7 +396,7 @@ launchBtns.forEach(btn => {
     // Set status (example)
     if (id === "cherax") setStatus(true);
 
-    // ⭐ LIVE UPDATED COUNTER
+    // ⭐ LIVE UPDATED COUNTER (runs when popup opens)
     document.getElementById("premiumUpdatedText").textContent =
       getDaysAgo(premiumData.lastUpdated);
 
@@ -462,3 +459,7 @@ function getDaysAgo(dateString) {
   if (diffDays === 1) return "1 day ago";
   return `${diffDays} days ago`;
 }
+
+/* ⭐ RUN ON PAGE LOAD */
+document.getElementById("premiumUpdatedText").textContent =
+  getDaysAgo(premiumData.lastUpdated);
