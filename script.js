@@ -1,4 +1,6 @@
-/* 1. Popup Database */
+/* ------------------------------
+   TUTORIAL DATABASE
+------------------------------ */
 const tutorialData = {
   cherax: {
     title: "Cherax",
@@ -22,7 +24,7 @@ const tutorialData = {
     helpLink: "https://www.youtube.com/watch?v=xj9UvxI6voM",
     download: "https://loot-link.com/s?GWDxHyNk",
     website: "",
-    discord: "https://discord.gg/bHy6eRMNeV",
+    discord: "https://discord.gg/bHy6eRMNeV"
   },
 
   yimv1: {
@@ -49,7 +51,7 @@ const tutorialData = {
     website: "",
     discord: "https://discord.gg/bHy6eRMNeV"
   },
-    
+
   Kiddions: {
     title: "Kiddions Mod Menu (Outdated)",
     tags: "FREE • GUIDE • GTA 5 ONLINE",
@@ -57,23 +59,23 @@ const tutorialData = {
     embed: "https://www.youtube.com/embed/pnnwFsWkYzE",
     type: "free",
     helpTooltip: "Need help installing YimMenu V2?",
-    helpLink: "https://www.youtube.com/watch?v=xj9UvxI6voM",
+    helpLink: "https://www.youtube.com/watch?v/xj9UvxI6voM",
     download: "https://loot-link.com/s?dd3d6b1d",
     website: "",
     discord: "https://discord.gg/bHy6eRMNeV"
   }
-
-  
 };
 
-/* <!-- SEARCH ENGINE --> */
-/* 1. GET ELEMENTS */
+
+/*------------------------------
+        SEARCH ENGINE
+------------------------------*/
 const searchInput = document.getElementById("searchInput");
 const cards = document.querySelectorAll(".tutorial-card");
+
 let currentPage = 1;
 const cardsPerPage = 6;
 
-/* 2. GLOBAL SEARCH (works across ALL pages) */
 searchInput.addEventListener("input", () => {
   const query = searchInput.value.toLowerCase();
 
@@ -82,16 +84,20 @@ searchInput.addEventListener("input", () => {
     card.style.display = text.includes(query) ? "block" : "none";
   });
 
-  // Hide pagination while searching
+  const pagination = document.querySelector(".pagination");
+
   if (query.length > 0) {
-    document.querySelector(".pagination").style.display = "none";
+    pagination.style.display = "none";
   } else {
-    document.querySelector(".pagination").style.display = "flex";
-    applyPagination(currentPage);   // restore correct page
+    pagination.style.display = "flex";
+    applyPagination(currentPage);
   }
 });
 
-/* 3. PAGINATION FUNCTION */
+
+/* ------------------------------
+         PAGINATION
+------------------------------ */
 function applyPagination(page) {
   currentPage = page;
 
@@ -103,7 +109,6 @@ function applyPagination(page) {
   });
 }
 
-/* 4. PAGINATION BUTTONS */
 const pagePrev = document.getElementById("pagePrev");
 const pageNext = document.getElementById("pageNext");
 const pageNumber = document.getElementById("pageNumber");
@@ -129,10 +134,12 @@ pageNext.addEventListener("click", () => {
   }
 });
 
-
-/* 5. INITIAL PAGE LOAD */
 applyPagination(1);
 
+
+/* ------------------------------
+   MODAL POPUP
+------------------------------ */
 const modal = document.getElementById("modal");
 const modalOverlay = document.getElementById("modalOverlay");
 const modalContent = document.getElementById("modalContent");
@@ -145,27 +152,23 @@ document.querySelectorAll(".more-btn").forEach(btn => {
 
     let buttons = "";
 
-    // FREE MENU → Download
     if (t.type === "free" && t.download) {
       buttons += `
         <a href="${t.download}" class="btn-download" target="_blank">
           <img src="https://raw.githubusercontent.com/sunset1x/red-orbit/refs/heads/main/images/downloadd.png" class="icon">
           <span class="download-text">Download</span>
         </a>
-        
       `;
-      
-    }
-    // PAID MENU → Purchase
-    if (t.type === "paid" && t.purchase) {
-      buttons += `
-    <a href="${t.purchase}" class="btn-purchase" target="_blank">
-          <span class="download-text">🛒 Purchase</span>
-        </a>
-  `;;
     }
 
-    // WEBSITE BUTTON (optional)
+    if (t.type === "paid" && t.purchase) {
+      buttons += `
+        <a href="${t.purchase}" class="btn-purchase" target="_blank">
+          <span class="download-text">🛒 Purchase</span>
+        </a>
+      `;
+    }
+
     if (t.website) {
       buttons += `
         <a href="${t.website}" class="btn-website" target="_blank">
@@ -174,25 +177,23 @@ document.querySelectorAll(".more-btn").forEach(btn => {
       `;
     }
 
-    // DISCORD BUTTON (optional)
     if (t.discord) {
       buttons += `
         <a href="${t.discord}" class="btn-discord" target="_blank">
           <img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" class="icon">
         </a>
       `;
-    }  
-    // HELP TOOLTIP (clickable)
-  if (t.type === "free" && t.helpTooltip && t.helpLink) {
-    buttons += `
-      <a href="${t.helpLink}" target="_blank" class="help-tooltip">
-        <span class="icon">?</span>
-        <span class="tooltip-text">${t.helpTooltip}</span>
-      </a>
-    `;
-  }
+    }
 
-    // FINAL POPUP CONTENT
+    if (t.type === "free" && t.helpTooltip && t.helpLink) {
+      buttons += `
+        <a href="${t.helpLink}" target="_blank" class="help-tooltip">
+          <span class="icon">?</span>
+          <span class="tooltip-text">${t.helpTooltip}</span>
+        </a>
+      `;
+    }
+
     modalContent.innerHTML = `
       <h2>${t.title}</h2>
 
@@ -206,44 +207,47 @@ document.querySelectorAll(".more-btn").forEach(btn => {
         ${buttons}
       </div>
     `;
-    
+
     modal.classList.add("active");
     modalOverlay.classList.add("active");
   });
 });
 
+modalClose.addEventListener("click", closeModal);
+modalOverlay.addEventListener("click", closeModal);
 
-modalClose.addEventListener("click", () => {
+function closeModal() {
   modal.classList.remove("active");
   modalOverlay.classList.remove("active");
-});
-
-modalOverlay.addEventListener("click", () => {
-  modal.classList.remove("active");
-  modalOverlay.classList.remove("active");
-});
+}
 
 
-  function updateTutorialCount() {
-    const cards = document.querySelectorAll('.tutorial-card');
-    const count = cards.length;
-    const counter = document.querySelector('.tutorial-count');
-    const badge = document.querySelector('.new-badge');
 
-    const previousCount = Number(localStorage.getItem("tutorialCount")) || 0;
+/* ------------------------------
+   TUTORIAL COUNTER
+------------------------------ */
+function updateTutorialCount() {
+  const cards = document.querySelectorAll('.tutorial-card');
+  const count = cards.length;
+  const counter = document.querySelector('.tutorial-count');
+  const badge = document.querySelector('.new-badge');
 
-    counter.textContent = `${count} tutorials live`;
+  const previousCount = Number(localStorage.getItem("tutorialCount")) || 0;
 
-    if (count > previousCount) {
-      badge.style.display = "inline-block";
-    }
+  counter.textContent = `${count} tutorials live`;
 
-    localStorage.setItem("tutorialCount", count);
+  if (count > previousCount) {
+    badge.style.display = "inline-block";
   }
 
-  updateTutorialCount();
+  localStorage.setItem("tutorialCount", count);
+}
 
-/* Themes */
+updateTutorialCount();
+
+/* ------------------------------
+   THEME SWITCHER
+------------------------------ */
 const themeOrder = ["theme-tempest", "theme-purple", "theme-blood"];
 let currentTheme = localStorage.getItem("theme") || "theme-blood";
 
