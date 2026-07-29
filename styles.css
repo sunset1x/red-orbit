@@ -904,6 +904,20 @@ html {
         transform: translateY(-2px);
       }
 
+      /* DISCORD BUTTON — Discord brand theme */
+      .btn-help {
+        padding: 10px 16px;
+        border-radius: 6px;
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.2s ease;
+      }
+      .btn-help:hover {
+        background: #6f7aff;
+        transform: translateY(-2px);
+      }
+
     .icon {
       width: 26px;
       height: 26px;
