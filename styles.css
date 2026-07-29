@@ -280,7 +280,7 @@ z
   align-items: center;
 
   /* FIX: prevent layout break */
-  max-width: 480px;
+  max-width: 100%;
   width: 100%;
 }
 
