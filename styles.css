@@ -285,8 +285,8 @@ html {
     0 12px 28px rgba(0, 0, 0, 0.45),
     0 0 30px var(--accent);
 
-  width: 100%;
-  max-width: 100%;
+  width: 80%;
+  max-width: 80%;
   min-width: 0;
   transition: 0.25s ease;
 
