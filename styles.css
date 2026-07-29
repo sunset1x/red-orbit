@@ -991,6 +991,50 @@ html {
   box-shadow: 0 0 20px var(--accent);
 }
 
+/* STATUS INDICATOR */
+.premium-status {
+  position: absolute;
+  bottom: 18px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: statusPulse 1.2s infinite ease-in-out;
+}
+
+/* Operational (green) */
+.status-dot.operational {
+  background: #00ff6a;
+  box-shadow: 0 0 10px #00ff6a;
+}
+
+/* Not Operational (red) */
+.status-dot.offline {
+  background: #ff3b3b;
+  box-shadow: 0 0 10px #ff3b3b;
+}
+
+.status-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+  opacity: 0.9;
+}
+
+/* Flashing animation */
+@keyframes statusPulse {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.75); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+
     
     /* FOOTER */
     .footer {
