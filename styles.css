@@ -463,6 +463,23 @@ html {
       line-height: 1.5;
     }
 
+
+.partners-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.partners-link:hover {
+  color: var(--accent-soft);
+  text-decoration: underline;
+}
+
+
     /* MAIN */
     main {
       margin-top: 50px;
