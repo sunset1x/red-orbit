@@ -216,13 +216,6 @@
   <!-- TITLE -->
   <div class="modal-header">
   <h2 id="modalTitle"></h2>
-
-  <!-- STATUS -->
-  <div class="modal-status">
-    <span id="modalStatusDot" class="status-dot operational"></span>
-    <span id="modalStatusText">Operational</span>
-  </div>
-</div>
   
   <!-- TABS -->
   <div class="modal-tabs">
@@ -234,12 +227,23 @@
   <!-- CONTENT AREA -->
   <div class="modal-body">
 
-  <!-- OVERVIEW TAB -->
-  <div id="tab-overview" class="tab-content active">
+<!-- OVERVIEW TAB -->
+<div id="tab-overview" class="tab-content active overview-tab">
+  <div class="overview-video">
     <iframe id="modalVideo" allowfullscreen></iframe>
-    <p id="modalDesc"></p>
-    <div class="modal-buttons" id="modalButtons"></div>
   </div>
+
+  <p id="modalDesc" class="overview-desc"></p>
+
+  <div class="modal-buttons" id="modalButtons"></div>
+
+<!-- STATUS -->
+  <div class="modal-status-float">
+    <span id="modalStatusDot" class="status-dot operational"></span>
+    <span id="modalStatusText">Operational</span>
+  </div>
+</div>
+
   
   <!-- CHANGELOG TAB -->
   <div id="tab-changelog" class="tab-content tab-scroll">
