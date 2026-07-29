@@ -65,7 +65,7 @@ const tutorialData = {
     `,
 
     buttons: `
-      <a href="https://loot-link.com/s?GWDxHyNk" class="btn-download" target="_blank"><img src="https://raw.githubusercontent.com/sunset1x/red-orbit/refs/heads/main/images/download.png" class="download-icon">Download</a>
+      <a href="https://loot-link.com/s?GWDxHyNk" class="btn-download" target="_blank" class="download-icon">Download</a>
       <a href="https://discord.gg/bHy6eRMNeV" class="btn-discord" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" class="modal-icon"></a>
       <a href="https://www.youtube.com/watch?v=xj9UvxI6voM" class="btn-help" target="_blank">❓ Help</a>
     `
