@@ -282,6 +282,7 @@ z
   /* FIX: prevent layout break */
   max-width: 100%;
   width: 100%;
+  min-width: 0;
 }
 
 /* Hover */
