@@ -682,24 +682,6 @@ html {
   pointer-events: auto;
 }
 
-/* HEADER */
-
-.modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 18px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--card-border);
-}
-
-.modal-header h2 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--text-main);
-  margin: 0;
-}
-
 /* CLOSE BUTTON */
 .modal-close {
   position: absolute;
@@ -721,6 +703,23 @@ html {
   padding-bottom: 12px;
   border-bottom: 1px solid var(--card-border);
 }
+
+/* FLOATING STATUS (NO FOOTER) */
+.modal-status-float {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.85;
+  font-size: 0.9rem;
+}
+
+.modal-status-float:hover {
+  opacity: 1;
+}
+
 
 .status-dot {
   width: 10px;
@@ -816,7 +815,6 @@ html {
   font-size: 0.9rem;
   color: var(--text-muted);
 }
-
 
     
       /* DOWNLOAD BUTTON — green success theme */
