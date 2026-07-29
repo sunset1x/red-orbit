@@ -263,3 +263,17 @@ document.getElementById("themeButton").addEventListener("click", () => {
   currentTheme = nextTheme;
   localStorage.setItem("theme", nextTheme);
 });
+
+
+/* ------------------------------
+         Spotlight Video
+------------------------------ */
+
+  const playBtn = document.getElementById("spotlightPlay");
+  const thumb = document.getElementById("spotlightThumb");
+  const video = document.getElementById("spotlightVideo");
+
+  playBtn.addEventListener("click", () => {
+    thumb.style.display = "none";      // Hide thumbnail
+    video.style.display = "block";     // Show video player
+  });
