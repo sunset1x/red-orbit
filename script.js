@@ -248,7 +248,7 @@ updateTutorialCount();
 /* ------------------------------
    THEME SWITCHER
 ------------------------------ */
-const themeOrder = ["theme-tempest", "theme-purple", "theme-blood", "theme-glass"];
+const themeOrder = ["theme-glass", "theme-tempest", "theme-purple"];
 let currentTheme = localStorage.getItem("theme") || "theme-purple";
 
 document.body.classList.add(currentTheme);
