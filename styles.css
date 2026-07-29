@@ -1035,6 +1035,48 @@ html {
   100% { opacity: 1; transform: scale(1); }
 }
 
+/* REFLECTIVE SWEEP */
+.premium-reflect {
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  pointer-events: none;
+
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.18) 45%,
+    rgba(255, 255, 255, 0.28) 50%,
+    rgba(255, 255, 255, 0.18) 55%,
+    transparent 100%
+  );
+
+  transform: skewX(-20deg);
+  opacity: 0;
+}
+
+/* Sweep animation when popup becomes active */
+.premium-popup.active .premium-reflect {
+  animation: reflectSweep 1.2s ease forwards;
+}
+
+@keyframes reflectSweep {
+  0% {
+    left: -120%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    left: 120%;
+    opacity: 0;
+  }
+}
+
+
 
     
     /* FOOTER */
