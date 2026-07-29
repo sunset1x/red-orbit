@@ -473,4 +473,8 @@ document.getElementById("premiumUpdatedText").textContent =
 document.getElementById("premiumPopupUpdatedText").textContent =
   getDaysAgo(premiumData.lastUpdated);
 
+/* ------------------------------
+       Disable Right Click
+------------------------------ */
 
+document.addEventListener("contextmenu", e => e.preventDefault());
