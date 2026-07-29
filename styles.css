@@ -635,18 +635,41 @@ html {
     }
 
 
- /* NEW TUTORIAL MODAL */
+/* OVERLAY */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s ease;
+  z-index: 1000;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* MODAL */
 .tutorial-modal {
+  background: var(--bg-main);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.55);
+  padding: 28px;
+
+  width: min(90%, 650px);
+  height: 600px;                 /* FIXED HEIGHT */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.9);
-  background: var(--card);
-  width: min(90%, 650px);
-  padding: 28px;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.55);
   opacity: 0;
   pointer-events: none;
   transition: 0.25s ease;
@@ -676,7 +699,9 @@ html {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--card-border);
 }
 
 .status-dot {
@@ -704,13 +729,14 @@ html {
 }
 
 .tab-btn {
-  padding: 8px 16px;
+  padding: 10px 18px;
   background: var(--bg-alt);
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid var(--card-border);
   border-radius: 8px;
   color: var(--text-main);
   cursor: pointer;
   transition: 0.2s ease;
+  font-size: 0.9rem;
 }
 
 .tab-btn.active {
@@ -719,13 +745,26 @@ html {
   color: #fff;
 }
 
+/* CONTENT AREA */
+.modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
 /* TAB CONTENT */
 .tab-content {
   display: none;
+  animation: fadeIn 0.2s ease;
 }
 
 .tab-content.active {
   display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* VIDEO */
@@ -734,15 +773,36 @@ html {
   aspect-ratio: 16 / 9;
   border-radius: 12px;
   margin-bottom: 16px;
-  border: none;
+  border: 1px solid var(--card-border);
 }
 
 /* BUTTONS */
-.modal-buttons {
+.modal-buttons a {
+  padding: 10px 16px;
+  background: var(--bg-alt);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  color: var(--text-main);
+  text-decoration: none;
   display: flex;
-  gap: 12px;
-  margin-top: 16px;
+  align-items: center;
+  gap: 8px;
+  transition: 0.2s ease;
 }
+
+.modal-buttons a:hover {
+  background: var(--accent-soft);
+}
+
+/* LISTS */
+.howto-list,
+.changelog-list {
+  margin-left: 18px;
+  line-height: 1.55;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
 
     
       /* DOWNLOAD BUTTON — green success theme */
