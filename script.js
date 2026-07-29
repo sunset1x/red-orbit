@@ -248,8 +248,8 @@ updateTutorialCount();
 /* ------------------------------
    THEME SWITCHER
 ------------------------------ */
-const themeOrder = ["theme-tempest", "theme-purple", "theme-blood"];
-let currentTheme = localStorage.getItem("theme") || "theme-blood";
+const themeOrder = ["theme-tempest", "theme-purple", "theme-blood", "theme-glass"];
+let currentTheme = localStorage.getItem("theme") || "theme-glass";
 
 document.body.classList.add(currentTheme);
 
