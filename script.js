@@ -1,5 +1,5 @@
 /*------------------------------
-      TUTORIAL DATABASE
+      TUTORIAL DATABASE 
 ------------------------------*/
 const tutorialData = {
   cherax: {
