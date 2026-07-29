@@ -993,13 +993,15 @@ html {
 
 /* STATUS INDICATOR */
 .premium-status {
-  position: absolute;
-  bottom: 18px;
-  right: 24px;
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  justify-content: flex-end;
 }
+
 
 .status-dot {
   width: 10px;
