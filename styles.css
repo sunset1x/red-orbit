@@ -473,6 +473,7 @@ html {
   font-weight: 500;
   transition: 0.2s ease;
   text-align: center;
+  width: 100%;
 }
 
 .partners-link:hover {
