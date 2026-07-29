@@ -418,6 +418,8 @@ function setStatus(isOperational) {
 /* ------------------------------
          Update Status 
 ------------------------------ */
+document.getElementById("premiumUpdatedText").textContent =
+  getDaysAgo(premiumData.lastUpdated);
 
 
 function getDaysAgo(dateString) {
