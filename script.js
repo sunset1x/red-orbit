@@ -266,16 +266,38 @@ document.getElementById("themeButton").addEventListener("click", () => {
 
 
 /* ------------------------------
-         Spotlight Video
+         Premium Popup
 ------------------------------ */
+  const launchBtns = document.querySelectorAll(".featured-launch-btn");
+  const premiumOverlay = document.getElementById("premiumOverlay");
+  const premiumPopup = document.getElementById("premiumPopup");
+  const premiumClose = document.getElementById("premiumClose");
+  const premiumIframe = document.getElementById("premiumIframe");
 
-  const playBtn = document.getElementById("spotlightPlay");
-  const thumb = document.getElementById("spotlightThumb");
-  const video = document.getElementById("spotlightVideo");
-  const iframe = document.getElementById("spotlightIframe");
+  launchBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.dataset.id;
 
-  playBtn.addEventListener("click", () => {
-    iframe.src = "https://www.youtube.com/embed/nK_y97QGVQI?autoplay=1&mute=1";
-    thumb.style.display = "none";
-    video.classList.add("active");
+      // Load video based on ID
+      if (id === "cherax") {
+        premiumIframe.src = "https://www.youtube.com/embed/VIDEO_ID?autoplay=1&mute=1";
+      }
+
+      premiumOverlay.classList.add("active");
+      premiumPopup.classList.add("active");
+    });
   });
+
+  premiumClose.addEventListener("click", () => {
+    premiumOverlay.classList.remove("active");
+    premiumPopup.classList.remove("active");
+    premiumIframe.src = ""; // stop video
+  });
+
+  premiumOverlay.addEventListener("click", () => {
+    premiumOverlay.classList.remove("active");
+    premiumPopup.classList.remove("active");
+    premiumIframe.src = ""; // stop video
+  });
+
+
