@@ -54,6 +54,27 @@
       --text-muted: #b38b8b;
       --card-border: rgba(255, 0, 0, 0.15);
     }
+
+    /* ⚡ DARK GLASS THEME */
+    .theme-glass {
+      --bg: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
+      --bg-alt: rgba(255, 255, 255, 0.05);
+    
+      --accent: #00c8ff;
+      --accent-soft: #0094cc;
+      --accent-pink: #00eaff;
+    
+      --text-main: #f2faff;
+      --text-muted: #9bb8c2;
+    
+      --card-border: rgba(255, 255, 255, 0.15);
+      --glass-bg: rgba(255, 255, 255, 0.08);
+      --glass-blur: blur(14px);
+    
+      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.45);
+      --shadow-soft: 0 12px 28px rgba(0, 0, 0, 0.55);
+    }
+
     
     body {
       font-family: "Inter", system-ui, sans-serif;
@@ -837,4 +858,66 @@ html {
       margin: 0 auto;
       line-height: 1.6;
     }
+
+
+/* Themes */
+
+.theme-glass .tutorial-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-sm);
+  border-radius: 14px;
+  transition: 0.25s ease;
+}
+
+.theme-glass .tutorial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+.theme-glass .featured-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-soft);
+}
+
+.theme-glass .search-box input {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-main);
+}
+
+.theme-glass .modal {
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: var(--shadow-soft);
+}
+
+.theme-glass .btn,
+.theme-glass .btn-primary,
+.theme-glass .btn-ghost,
+.theme-glass .btn-discord2 {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-sm);
+  color: var(--text-main);
+}
+
+.theme-glass .btn:hover,
+.theme-glass .btn-primary:hover,
+.theme-glass .btn-ghost:hover,
+.theme-glass .btn-discord2:hover {
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-2px);
+}
+
+
+
+
+
 
