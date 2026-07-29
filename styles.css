@@ -789,7 +789,7 @@ html {
 /* Video */
 
 #modalVideo {
-  max-height: 220px;
+  max-height: 260px;
   width: 100%;
   aspect-ratio: 16 / 9;
   border-radius: 12px;
@@ -807,6 +807,14 @@ html {
 .modal-buttons a:hover {
   background: var(--accent-soft);
 }
+
+.modal-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
 
 /* LISTS */
 .howto-list,
@@ -833,7 +841,6 @@ html {
       }
       
       .btn-download:hover {
-        box-shadow: 0 0 14px rgba(0, 200, 83, 0.6);
         transform: translateY(-2px);
       }
       
