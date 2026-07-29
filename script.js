@@ -460,5 +460,5 @@ function getDaysAgo(dateString) {
 
   if (diffDays === 0) return "today";
   if (diffDays === 1) return "1 day ago";
-  return `Updated ${diffDays} days ago`;
+  return `${diffDays} days ago`;
 }
