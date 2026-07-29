@@ -32,8 +32,9 @@ const tutorialData = {
 
     buttons: `
       <a href="https://cherax.menu/landing#pricing" class="btn-purchase" target="_blank">🛒 Purchase</a>
-      <a href="https://cherax.menu" class="btn-website" target="_blank">Website</a>
-      <a href="https://discord.gg/bHy6eRMNeV" class="btn-discord" target="_blank">Discord</a>
+      <a href="https://cherax.menu" class="btn-website" target="_blank"><img src="https://raw.githubusercontent.com/sunset1x/red-orbit/refs/heads/main/images/website.png" class="modal-icon"></a>
+      <a href="https://discord.gg/bHy6eRMNeV" class="btn-discord" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" class="modal-icon"></a>
+
     `
   },
 
@@ -64,8 +65,8 @@ const tutorialData = {
     `,
 
     buttons: `
-      <a href="https://loot-link.com/s?GWDxHyNk" class="btn-download" target="_blank">⬇ Download</a>
-      <a href="https://discord.gg/bHy6eRMNeV" class="btn-discord" target="_blank">Discord</a>
+      <a href="https://loot-link.com/s?GWDxHyNk" class="btn-download" target="_blank"><img src="https://raw.githubusercontent.com/sunset1x/red-orbit/refs/heads/main/images/download.png" class="download-icon">Download</a>
+      <a href="https://discord.gg/bHy6eRMNeV" class="btn-discord" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" class="modal-icon"></a>
       <a href="https://www.youtube.com/watch?v=xj9UvxI6voM" class="btn-help" target="_blank">❓ Help</a>
     `
   },
@@ -98,7 +99,7 @@ const tutorialData = {
 
     buttons: `
       <a href="https://loot-link.com/s?4ggkVkbh" class="btn-download" target="_blank">⬇ Download</a>
-      <a href="https://discord.gg/bHy6eRMNeV" class="btn-discord" target="_blank">Discord</a>
+      <a href="https://discord.gg/bHy6eRMNeV" class="btn-discord" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" class="modal-icon"></a>
       <a href="https://www.youtube.com/watch?v=xj9UvxI6voM" class="btn-help" target="_blank">❓ Help</a>
     `
   },
@@ -127,7 +128,7 @@ const tutorialData = {
 
     buttons: `
       <a href="https://0xcheats.com/games" class="btn-purchase" target="_blank">🛒 Purchase</a>
-      <a href="https://discord.gg/bHy6eRMNeV" class="btn-discord" target="_blank">Discord</a>
+      <a href="https://discord.gg/bHy6eRMNeV" class="btn-discord" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" class="modal-icon"></a>
     `
   },
 
@@ -155,7 +156,7 @@ const tutorialData = {
 
     buttons: `
       <a href="https://loot-link.com/s?dd3d6b1d" class="btn-download" target="_blank">⬇ Download</a>
-      <a href="https://discord.gg/bHy6eRMNeV" class="btn-discord" target="_blank">Discord</a>
+      <a href="https://discord.gg/bHy6eRMNeV" class="btn-discord" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" class="modal-icon"></a>
       <a href="https://www.youtube.com/watch?v=xj9UvxI6voM" class="btn-help" target="_blank">❓ Help</a>
     `
   }
