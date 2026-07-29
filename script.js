@@ -458,7 +458,7 @@ function getDaysAgo(dateString) {
   const diffTime = now - updatedDate;
   const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 
-  if (diffDays === 0) return "Updated today";
-  if (diffDays === 1) return "Updated 1 day ago";
+  if (diffDays === 0) return "today";
+  if (diffDays === 1) return "1 day ago";
   return `Updated ${diffDays} days ago`;
 }
