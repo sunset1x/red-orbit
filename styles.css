@@ -815,6 +815,13 @@ html {
   pointer-events: none;
 }
 
+.modal-icon2 {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
 
 /* LISTS */
 .howto-list,
