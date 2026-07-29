@@ -325,16 +325,21 @@ function closeModal() {
   modalVideo.src = ""; // stop video
 }
 
-/* TAB SWITCHING */
+// TAB SWITCHING (simple, solid)
 document.querySelectorAll(".tab-btn").forEach(btn => {
   btn.addEventListener("click", () => {
+    const target = btn.dataset.tab; // "overview", "changelog", "howto"
+
+    // buttons
     document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
 
+    // content
     document.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
-    document.getElementById(`tab-${btn.dataset.tab}`).classList.add("active");
+    document.getElementById(`tab-${target}`).classList.add("active");
   });
 });
+
 
 
 
