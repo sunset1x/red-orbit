@@ -362,39 +362,70 @@ document.getElementById("themeButton").addEventListener("click", () => {
 /* ------------------------------
          Premium Popup
 ------------------------------ */
-  const launchBtns = document.querySelectorAll(".featured-launch-btn");
-  const premiumOverlay = document.getElementById("premiumOverlay");
-  const premiumPopup = document.getElementById("premiumPopup");
-  const premiumClose = document.getElementById("premiumClose");
-  const premiumIframe = document.getElementById("premiumIframe");
+ /* ------------------------------
+        Premium Popup Data
+------------------------------ */
 
-  launchBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const id = btn.dataset.id;
+const premiumData = {
+  lastUpdated: "2026-07-14" // CHANGE THIS DATE WHEN YOU UPDATE
+};
 
-      // Load video based on ID
-      if (id === "cherax") {
-        premiumIframe.src = "https://www.youtube.com/embed/nK_y97QGVQI?autoplay=0&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0";
-      }
 
-      if (id === "cherax") setStatus(true);
-          
-      premiumOverlay.classList.add("active");
-      premiumPopup.classList.add("active");
-    });
+/* ------------------------------
+        Premium Popup Elements
+------------------------------ */
+
+const launchBtns = document.querySelectorAll(".featured-launch-btn");
+const premiumOverlay = document.getElementById("premiumOverlay");
+const premiumPopup = document.getElementById("premiumPopup");
+const premiumClose = document.getElementById("premiumClose");
+const premiumIframe = document.getElementById("premiumIframe");
+
+
+/* ------------------------------
+        Open Premium Popup
+------------------------------ */
+
+launchBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const id = btn.dataset.id;
+
+    // Load video based on ID
+    if (id === "cherax") {
+      premiumIframe.src =
+        "https://www.youtube.com/embed/nK_y97QGVQI?autoplay=0&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0";
+    }
+
+    // Set status (example)
+    if (id === "cherax") setStatus(true);
+
+    // ⭐ LIVE UPDATED COUNTER
+    document.getElementById("premiumUpdatedText").textContent =
+      getDaysAgo(premiumData.lastUpdated);
+
+    // Open popup
+    premiumOverlay.classList.add("active");
+    premiumPopup.classList.add("active");
   });
+});
 
-  premiumClose.addEventListener("click", () => {
-    premiumOverlay.classList.remove("active");
-    premiumPopup.classList.remove("active");
-    premiumIframe.src = ""; // stop video
-  });
 
-  premiumOverlay.addEventListener("click", () => {
-    premiumOverlay.classList.remove("active");
-    premiumPopup.classList.remove("active");
-    premiumIframe.src = ""; // stop video
-  });
+/* ------------------------------
+        Close Premium Popup
+------------------------------ */
+
+premiumClose.addEventListener("click", () => {
+  premiumOverlay.classList.remove("active");
+  premiumPopup.classList.remove("active");
+  premiumIframe.src = ""; // stop video
+});
+
+premiumOverlay.addEventListener("click", () => {
+  premiumOverlay.classList.remove("active");
+  premiumPopup.classList.remove("active");
+  premiumIframe.src = ""; // stop video
+});
+
 
 /* ------------------------------
        Premium Popup Status 
@@ -415,12 +446,10 @@ function setStatus(isOperational) {
   }
 }
 
-/* ------------------------------
-         Update Status 
------------------------------- */
-document.getElementById("premiumUpdatedText").textContent =
-  getDaysAgo(premiumData.lastUpdated);
 
+/* ------------------------------
+       Updated X Days Ago
+------------------------------ */
 
 function getDaysAgo(dateString) {
   const updatedDate = new Date(dateString);
@@ -433,5 +462,3 @@ function getDaysAgo(dateString) {
   if (diffDays === 1) return "Updated 1 day ago";
   return `Updated ${diffDays} days ago`;
 }
-
-lastUpdated: "2026-07-14"
