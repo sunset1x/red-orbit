@@ -385,12 +385,12 @@ html {
 
 .spotlight-video iframe {
   width: 100%;
-  height: 280px;
+  height: 220px;
   border: none;
 }
 
 .spotlight-video.active {
-  height: 280px;
+  height: 220px;
   opacity: 1;
   pointer-events: auto;
 }
