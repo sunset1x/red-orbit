@@ -364,7 +364,7 @@ document.getElementById("themeButton").addEventListener("click", () => {
 ------------------------------ */
 
 const premiumData = {
-  lastUpdated: "2026-07-14" // CHANGE THIS DATE WHEN YOU UPDATE
+  lastUpdated: "2026-07-14" // date you updated the mod menu
 };
 
 
@@ -460,6 +460,11 @@ function getDaysAgo(dateString) {
   return `${diffDays} days ago`;
 }
 
-/* ⭐ RUN ON PAGE LOAD */
+
+/* ------------------------------
+       Run On Page Load
+------------------------------ */
+
 document.getElementById("premiumUpdatedText").textContent =
   getDaysAgo(premiumData.lastUpdated);
+
