@@ -272,8 +272,10 @@ document.getElementById("themeButton").addEventListener("click", () => {
   const playBtn = document.getElementById("spotlightPlay");
   const thumb = document.getElementById("spotlightThumb");
   const video = document.getElementById("spotlightVideo");
+  const iframe = document.getElementById("spotlightIframe");
 
   playBtn.addEventListener("click", () => {
-    thumb.style.display = "none";      // Hide thumbnail
-    video.style.display = "block";     // Show video player
+    iframe.src = "https://www.youtube.com/embed/VIDEO_ID?autoplay=1&mute=1";
+    thumb.style.display = "none";
+    video.classList.add("active");
   });
