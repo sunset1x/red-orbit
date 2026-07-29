@@ -288,6 +288,28 @@ html {
     0 0 60px var(--accent);
 }
 
+/* Inline video container (hidden by default) */
+.spotlight-video {
+  display: none;
+  width: 100%;
+  height: 220px;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.spotlight-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 /* Thumbnail container */
 .spotlight-thumb {
   position: relative;
