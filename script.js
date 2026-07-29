@@ -300,4 +300,23 @@ document.getElementById("themeButton").addEventListener("click", () => {
     premiumIframe.src = ""; // stop video
   });
 
+/* ------------------------------
+       Premium Popup Status 
+------------------------------ */
+
+function setStatus(isOperational) {
+  const dot = document.getElementById("statusDot");
+  const text = document.getElementById("statusText");
+
+  if (isOperational) {
+    dot.classList.remove("offline");
+    dot.classList.add("operational");
+    text.textContent = "Operational";
+  } else {
+    dot.classList.remove("operational");
+    dot.classList.add("offline");
+    text.textContent = "Not Operational";
+  }
+}
+
 
