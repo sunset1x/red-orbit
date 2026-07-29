@@ -1,339 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/sunset1x/red-orbit/refs/heads/main/images/tmzlogo.png">
-  <title>Tempest Modz – Tutorials</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-  <div class="page-shell">
-
-    <!-- HEADER -->
-    <header>
-      <div class="tagline">STORY MODE ONLY · TUTORIALS BY TEMPEST MODZ</div>
-
-      <div class="hero">
-        <div class="hero-main">
-          <h1>Tempest Modz</h1>
-          <p>
-            I’m the guy behind Tempest Modz. This is where I keep every GTA V Story Mode mod menu
-            I actually use — plus the videos that walk you through them. No shady links, no online
-            nonsense. Just the stuff that works.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#tutorials" class="btn btn-primary" id="browseMenuBtn">Browse the menus</a>
-            <a href="https://youtube.com/@Liv1ngTempest" target="_blank" class="btn btn-ghost">Subscribe on YouTube</a>
-            <a href="https://discord.com/invite/bHy6eRMNeV" class="btn-discord2" target="_blank">
-              <img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" class="modal-icon2">
-            </a>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/sunset1x/red-orbit/refs/heads/main/images/tmzlogo.png">
+    <title>Tempest Modz – Tutorials</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="page-shell">
+      <!-- HEADER -->
+      <header>
+        <div class="tagline">STORY MODE ONLY · TUTORIALS BY TEMPEST MODZ</div>
+        <div class="hero">
+          <div class="hero-main">
+            <h1>Tempest Modz</h1>
+            <p> I’m the guy behind Tempest Modz. This is where I keep every GTA V Story Mode mod menu I actually use — plus the videos that walk you through them. No shady links, no online nonsense. Just the stuff that works. </p>
+            <div class="hero-actions">
+              <a href="#tutorials" class="btn btn-primary" id="browseMenuBtn">Browse the menus</a>
+              <a href="https://youtube.com/@Liv1ngTempest" target="_blank" class="btn btn-ghost">Subscribe on YouTube</a>
+              <a href="https://discord.com/invite/bHy6eRMNeV" class="btn-discord2" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" class="modal-icon2">
+              </a>
+            </div>
           </div>
+          <div class="featured-card game-launcher">
+            <div class="featured-thumb">
+              <img src="https://raw.githubusercontent.com/sunset1x/red-orbit/refs/heads/main/images/cherax.png" alt="Cherax Logo">
+            </div>
+            <div class="featured-info">
+              <div class="featured-ribbon">FEATURED MOD MENU</div>
+              <h3 class="featured-title">Cherax Mod Menu</h3>
+              <p class="featured-desc"> A premium GTA V mod menu known for stability, power, and frequent updates. </p>
+              <div class="featured-stats">
+                <div class="stat">
+                  <span class="stat-label">Rating</span>
+                  <span class="stat-value">★★★★★</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-label">Updated</span>
+                  <span class="stat-value" id="premiumUpdatedText"></span>
+                </div>
+                <div class="stat">
+                  <span class="stat-label">Category</span>
+                  <span class="stat-value">Paid</span>
+                </div>
+              </div>
+              <a href="#" class="featured-launch-btn" data-id="cherax">Launch Guide</a>
+            </div>
+          </div>
+      </header>
+      <!-- MAIN CONTENT -->
+      <main>
+        <section id="tutorials">
+          <div class="section-header">
+            <h2>Tutorials I actually stand by</h2>
+            <p>Filter by game or search by name. Everything here is tested and used personally.</p>
+          </div>
+          <!-- SEARCH -->
+          <div class="search-box">
+            <input id="searchInput" type="text" placeholder="Search by title, tag, or game…">
+            <small class="tutorial-count">
+              <span class="tutorial-dot"></span>0 tutorials live </small>
+            <span class="new-badge">+ New</span>
+          </div>
+          <!-- TUTORIAL GRID -->
+          <div class="tutorial-grid" id="tutorialGrid">
+            <!-- CARD 1 -->
+            <div class="tutorial-card" data-tags="paid recommend gta 5 online cherax" data-pinned="true">
+              <span class="pinned-badge">📌 PINNED</span>
+              <div class="tutorial-video">
+                <iframe src="https://www.youtube.com/embed/nK_y97QGVQI?autoplay=0&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="tutorial-tags">PAID • RECOMMEND • GTA 5 ONLINE</div>
+              <div class="tutorial-title">Cherax</div>
+              <div class="tutorial-desc"> The most powerful and reliable paid GTA V mod menu for those willing to spend. </div>
+              <button class="more-btn" data-id="cherax">LEARN MORE</button>
+            </div>
+            <!-- CARD 2 -->
+            <div class="tutorial-card" data-tags="free recommend gta 5 online yimmenu v2" data-pinned="true">
+              <span class="pinned-badge">📌 PINNED</span>
+              <div class="tutorial-video">
+                <iframe src="https://www.youtube.com/embed/ddmhUIjrmoU?autoplay=0&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="tutorial-tags">FREE • RECOMMEND • GTA 5 ONLINE</div>
+              <div class="tutorial-title">YimMenu V2 (Enhanced)</div>
+              <div class="tutorial-desc"> A full guide to the best free GTA5 Online menu for Enhanced Edition. </div>
+              <button class="more-btn" data-id="yimv2">LEARN MORE</button>
+            </div>
+            <!-- CARD 3 -->
+            <div class="tutorial-card" data-tags="paid install gta 5 online 0xcheats">
+              <div class="tutorial-video">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="tutorial-tags">PAID • INSTALL • GTA 5 ONLINE</div>
+              <div class="tutorial-title">0xCheats</div>
+              <div class="tutorial-desc"> An outstanding mod menu with dozens of features that is still undergoing testing. </div>
+              <button class="more-btn" data-id="OxCheats">LEARN MORE</button>
+            </div>
+            <!-- CARD 4 -->
+            <div class="tutorial-card" data-tags="free guide gta 5 online yimmenu legacy">
+              <div class="tutorial-video">
+                <iframe src="https://www.youtube.com/embed/EhqrD2KMqWs?autoplay=0&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="tutorial-tags">FREE • GUIDE • GTA 5 ONLINE</div>
+              <div class="tutorial-title">YimMenu (Legacy)</div>
+              <div class="tutorial-desc"> A full guide to the best free GTA5 Online menu for Legacy Edition. </div>
+              <button class="more-btn" data-id="yimv1">LEARN MORE</button>
+            </div>
+            <!-- CARD 5 -->
+            <div class="tutorial-card" data-tags="free guide gta 5 online kiddions">
+              <div class="tutorial-video">
+                <iframe src="https://www.youtube.com/embed/pnnwFsWkYzE?autoplay=0&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="tutorial-tags">FREE • GUIDE • GTA 5 ONLINE</div>
+              <div class="tutorial-title">Kiddions (Outdated)</div>
+              <div class="tutorial-desc"> A full guide to the most iconic free GTA5 Online menu for Legacy Edition. </div>
+              <button class="more-btn" data-id="Kiddions">LEARN MORE</button>
+            </div>
+            <!-- CARD 6 -->
+            <div class="tutorial-card" data-tags="free guide gta 5 online legacy">
+              <div class="tutorial-video">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="tutorial-tags">FREE • GUIDE • GTA 5 ONLINE</div>
+              <div class="tutorial-title">YimMenu (Legacy)</div>
+              <div class="tutorial-desc"> A full guide to the best free GTA5 Online menu for Legacy Edition. </div>
+              <button class="more-btn" data-id="legacy">LEARN MORE</button>
+            </div>
+            <!-- CARD 7 -->
+            <div class="tutorial-card" data-tags="free guide gta 5 online dogpoopy">
+              <div class="tutorial-video">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="tutorial-tags">FREE • GUIDE • GTA 5 ONLINE</div>
+              <div class="tutorial-title">DogPoopy Butt (Legacy)</div>
+              <div class="tutorial-desc"> A full guide to the best free GTA5 Online menu for Legacy Edition. </div>
+              <button class="more-btn" data-id="butt">LEARN MORE</button>
+            </div>
+          </div>
+        </section>
+        <!-- PAGINATION -->
+        <div class="pagination">
+          <button id="pagePrev" class="page-arrow">←</button>
+          <span id="pageNumber" class="page-number">1</span>
+          <button id="pageNext" class="page-arrow">→</button>
         </div>
-
-        <div class="featured-card game-launcher">
-        <div class="featured-thumb">
-          <img src="https://raw.githubusercontent.com/sunset1x/red-orbit/refs/heads/main/images/cherax.png" alt="Cherax Logo">
-        </div>
-      
-        <div class="featured-info">
-          <div class="featured-ribbon">FEATURED MOD MENU</div>
-      
-          <h3 class="featured-title">Cherax Mod Menu</h3>
-          <p class="featured-desc">
-            A premium GTA V mod menu known for stability, power, and frequent updates.
-          </p>
-      
-          <div class="featured-stats">
-            <div class="stat">
-              <span class="stat-label">Rating</span>
-              <span class="stat-value">★★★★★</span>
-            </div>
-            <div class="stat">
-              <span class="stat-label">Updated</span>
-              <span class="stat-value" id="premiumUpdatedText"></span>
-            </div>
-            <div class="stat">
-              <span class="stat-label">Category</span>
-              <span class="stat-value">Paid</span>
-            </div>
-          </div>
-
-    <a href="#" class="featured-launch-btn" data-id="cherax">Launch Guide</a>
-  </div>
-</div>
-
-        
-    </header>
-    <!-- MAIN CONTENT -->
-    <main>
-      <section id="tutorials">
-        <div class="section-header">
-          <h2>Tutorials I actually stand by</h2>
-          <p>Filter by game or search by name. Everything here is tested and used personally.</p>
-        </div>
-
-        <!-- SEARCH -->
-        <div class="search-box">
-          <input id="searchInput" type="text" placeholder="Search by title, tag, or game…">
-          <small class="tutorial-count"><span class="tutorial-dot"></span>0 tutorials live</small>
-          <span class="new-badge">+ New</span>
-        </div>
-
-        <!-- TUTORIAL GRID -->
-        <div class="tutorial-grid" id="tutorialGrid">
-
-          <!-- CARD 1 -->
-          <div class="tutorial-card" data-tags="paid recommend gta 5 online cherax" data-pinned="true">
-            <span class="pinned-badge">📌 PINNED</span>
-            <div class="tutorial-video">
-              <iframe src="https://www.youtube.com/embed/nK_y97QGVQI?autoplay=0&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen></iframe>
-            </div>
-            <div class="tutorial-tags">PAID • RECOMMEND • GTA 5 ONLINE</div>
-            <div class="tutorial-title">Cherax</div>
-            <div class="tutorial-desc">
-              The most powerful and reliable paid GTA V mod menu for those willing to spend.
-            </div>
-            <button class="more-btn" data-id="cherax">LEARN MORE</button>
-          </div>
-
-          <!-- CARD 2 -->
-          <div class="tutorial-card" data-tags="free recommend gta 5 online yimmenu v2" data-pinned="true">
-            <span class="pinned-badge">📌 PINNED</span>
-            <div class="tutorial-video">
-              <iframe src="https://www.youtube.com/embed/ddmhUIjrmoU?autoplay=0&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen></iframe>
-            </div>
-            <div class="tutorial-tags">FREE • RECOMMEND • GTA 5 ONLINE</div>
-            <div class="tutorial-title">YimMenu V2 (Enhanced)</div>
-            <div class="tutorial-desc">
-              A full guide to the best free GTA5 Online menu for Enhanced Edition.
-            </div>
-            <button class="more-btn" data-id="yimv2">LEARN MORE</button>
-          </div>
-
-          <!-- CARD 3 -->
-          <div class="tutorial-card" data-tags="paid install gta 5 online 0xcheats">
-            <div class="tutorial-video">
-              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen></iframe>
-            </div>
-            <div class="tutorial-tags">PAID • INSTALL • GTA 5 ONLINE</div>
-            <div class="tutorial-title">0xCheats</div>
-            <div class="tutorial-desc">
-              An outstanding mod menu with dozens of features that is still undergoing testing.
-            </div>
-            <button class="more-btn" data-id="OxCheats">LEARN MORE</button>
-          </div>
-
-          <!-- CARD 4 -->
-          <div class="tutorial-card" data-tags="free guide gta 5 online yimmenu legacy">
-            <div class="tutorial-video">
-              <iframe src="https://www.youtube.com/embed/EhqrD2KMqWs?autoplay=0&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen></iframe>
-            </div>
-            <div class="tutorial-tags">FREE • GUIDE • GTA 5 ONLINE</div>
-            <div class="tutorial-title">YimMenu (Legacy)</div>
-            <div class="tutorial-desc">
-              A full guide to the best free GTA5 Online menu for Legacy Edition.
-            </div>
-            <button class="more-btn" data-id="yimv1">LEARN MORE</button>
-          </div>
-
-          <!-- CARD 5 -->
-          <div class="tutorial-card" data-tags="free guide gta 5 online kiddions">
-            <div class="tutorial-video">
-              <iframe src="https://www.youtube.com/embed/pnnwFsWkYzE?autoplay=0&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen></iframe>
-            </div>
-            <div class="tutorial-tags">FREE • GUIDE • GTA 5 ONLINE</div>
-            <div class="tutorial-title">Kiddions (Outdated)</div>
-            <div class="tutorial-desc">
-              A full guide to the most iconic free GTA5 Online menu for Legacy Edition.
-            </div>
-            <button class="more-btn" data-id="Kiddions">LEARN MORE</button>
-          </div>
-
-          <!-- CARD 6 -->
-          <div class="tutorial-card" data-tags="free guide gta 5 online legacy">
-            <div class="tutorial-video">
-              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen></iframe>
-            </div>
-            <div class="tutorial-tags">FREE • GUIDE • GTA 5 ONLINE</div>
-            <div class="tutorial-title">YimMenu (Legacy)</div>
-            <div class="tutorial-desc">
-              A full guide to the best free GTA5 Online menu for Legacy Edition.
-            </div>
-            <button class="more-btn" data-id="legacy">LEARN MORE</button>
-          </div>
-
-          <!-- CARD 7 -->
-          <div class="tutorial-card" data-tags="free guide gta 5 online dogpoopy">
-            <div class="tutorial-video">
-              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen></iframe>
-            </div>
-            <div class="tutorial-tags">FREE • GUIDE • GTA 5 ONLINE</div>
-            <div class="tutorial-title">DogPoopy Butt (Legacy)</div>
-            <div class="tutorial-desc">
-              A full guide to the best free GTA5 Online menu for Legacy Edition.
-            </div>
-            <button class="more-btn" data-id="butt">LEARN MORE</button>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- PAGINATION -->
-      <div class="pagination">
-        <button id="pagePrev" class="page-arrow">←</button>
-        <span id="pageNumber" class="page-number">1</span>
-        <button id="pageNext" class="page-arrow">→</button>
-      </div>
-    </main>
-
-  </div>
-
-<!-- MODAL OVERLAY -->
-<div id="modalOverlay" class="modal-overlay"></div>
-
-<!-- TUTORIAL MODAL -->
-<div id="modal" class="tutorial-modal">
-
-  <button id="modalClose" class="modal-close">×</button>
-
-  <!-- TITLE -->
-  <div class="modal-header">
-  <h2 id="modalTitle"></h2>
-  
-  <!-- TABS -->
-  <div class="modal-tabs">
-    <button class="tab-btn active" data-tab="overview">Overview</button>
-    <button class="tab-btn" data-tab="changelog">Changelog</button>
-    <button class="tab-btn" data-tab="howto">How To</button>
-  </div>
-
-  <!-- CONTENT AREA -->
-  <div class="modal-body">
-
-<!-- OVERVIEW TAB -->
-<div id="tab-overview" class="tab-content active overview-tab">
-  <div class="overview-video">
-    <iframe id="modalVideo" allowfullscreen></iframe>
-  </div>
-
-  <p id="modalDesc" class="overview-desc"></p>
-
-  <div class="modal-buttons" id="modalButtons"></div>
-
-<!-- STATUS -->
-  <div class="modal-status-float">
-    <span id="modalStatusDot" class="status-dot operational"></span>
-    <span id="modalStatusText">Operational</span>
-  </div>
-</div>
-
-  
-  <!-- CHANGELOG TAB -->
-  <div id="tab-changelog" class="tab-content tab-scroll">
-    <div id="modalChangelog"></div>
-  </div>
-  
-  <!-- HOW TO TAB -->
-  <div id="tab-howto" class="tab-content tab-scroll">
-    <div id="modalHowTo"></div>
-  </div>
-
-
-  </div>
-</div>
-
-
-  </div>
-</div>
-
-<!-- PREMIUM POPUP OVERLAY -->
-<div id="premiumOverlay" class="premium-overlay"></div>
-
-<!-- PREMIUM POPUP -->
-<div id="premiumPopup" class="premium-popup">
-  <button id="premiumClose" class="premium-close">×</button>
-
-  <div class="premium-reflect"></div>
-  
-  <div class="premium-content">
-    <h2 id="premiumTitle">Cherax Mod Menu</h2>
-
-    <!-- Embedded video -->
-    <div class="premium-video">
-      <iframe
-        id="premiumIframe"
-        src=""
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen
-      ></iframe>
+      </main>
     </div>
-
-    <p id="premiumDesc">
-      A premium GTA V mod menu known for stability, power, and frequent updates.
-    </p>
-
-    <!-- Stats -->
-    <div class="premium-stats">
-      <div class="stat">
-        <span class="stat-label">Rating</span>
-        <span class="stat-value">★★★★★</span>
-       </div>
-    <div class="stat">
-      <span class="stat-label">Updated</span>
-      <span class="stat-value" id="premiumPopupUpdatedText"></span>
-    </div>
-      <div class="stat">
-        <span class="stat-label">Category</span>
-        <span class="stat-value">Paid</span>
+    <!-- MODAL OVERLAY -->
+    <div id="modalOverlay" class="modal-overlay"></div>
+    <!-- TUTORIAL MODAL -->
+    <div id="modal" class="tutorial-modal">
+      <button id="modalClose" class="modal-close">×</button>
+      <!-- TITLE -->
+      <div class="modal-header">
+        <h2 id="modalTitle"></h2>
+        <!-- TABS -->
+        <div class="modal-tabs">
+          <button class="tab-btn active" data-tab="overview">Overview</button>
+          <button class="tab-btn" data-tab="changelog">Changelog</button>
+          <button class="tab-btn" data-tab="howto">How To</button>
+        </div>
+        <!-- CONTENT AREA -->
+        <div class="modal-body">
+          <!-- OVERVIEW TAB -->
+          <div id="tab-overview" class="tab-content active overview-tab">
+            <div class="overview-video">
+              <iframe id="modalVideo" allowfullscreen></iframe>
+            </div>
+            <p id="modalDesc" class="overview-desc"></p>
+            <div class="modal-buttons" id="modalButtons"></div>
+            <!-- STATUS -->
+            <div class="modal-status-float">
+              <span id="modalStatusDot" class="status-dot operational"></span>
+              <span id="modalStatusText">Operational</span>
+            </div>
+          </div>
+          <!-- CHANGELOG TAB -->
+          <div id="tab-changelog" class="tab-content tab-scroll">
+            <div id="modalChangelog"></div>
+          </div>
+          <!-- HOW TO TAB -->
+          <div id="tab-howto" class="tab-content tab-scroll">
+            <div id="modalHowTo"></div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <!-- Buttons -->
-    <div class="premium-actions">
-      <a href="https://cherax.menu/landing/purchase" class="premium-btn">Purchase</a>
-      <a href="https://cherax.menu" class="premium-btn">Website</a>
-      <a href="https://discord.com/invite/bHy6eRMNeV" target="_blank" class="premium-btn">Discord</a>
     </div>
-  </div>
-
-  <!-- ⭐ STATUS FOOTER GOES HERE ⭐ -->
-  <div class="premium-status" id="premiumStatus">
-    <span class="status-dot operational" id="statusDot"></span>
-    <span class="status-text" id="statusText">Operational</span>
-  </div>
-
-</div>
-
-
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      © 2026 Tempest Modz — Story Mode only.<br>
-      Not affiliated with Rockstar Games or Take‑Two Interactive.
+    <!-- PREMIUM POPUP OVERLAY -->
+    <div id="premiumOverlay" class="premium-overlay"></div>
+    <!-- PREMIUM POPUP -->
+    <div id="premiumPopup" class="premium-popup">
+      <button id="premiumClose" class="premium-close">×</button>
+      <div class="premium-reflect"></div>
+      <div class="premium-content">
+        <h2 id="premiumTitle">Cherax Mod Menu</h2>
+        <!-- Embedded video -->
+        <div class="premium-video">
+          <iframe id="premiumIframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <p id="premiumDesc"> A premium GTA V mod menu known for stability, power, and frequent updates. </p>
+        <!-- Stats -->
+        <div class="premium-stats">
+          <div class="stat">
+            <span class="stat-label">Rating</span>
+            <span class="stat-value">★★★★★</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Updated</span>
+            <span class="stat-value" id="premiumPopupUpdatedText"></span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Category</span>
+            <span class="stat-value">Paid</span>
+          </div>
+        </div>
+        <!-- Buttons -->
+        <div class="premium-actions">
+          <a href="https://cherax.menu/landing/purchase" class="premium-btn">Purchase</a>
+          <a href="https://cherax.menu" class="premium-btn">Website</a>
+          <a href="https://discord.com/invite/bHy6eRMNeV" target="_blank" class="premium-btn">Discord</a>
+        </div>
+      </div>
+      <!-- ⭐ STATUS FOOTER GOES HERE ⭐ -->
+      <div class="premium-status" id="premiumStatus">
+        <span class="status-dot operational" id="statusDot"></span>
+        <span class="status-text" id="statusText">Operational</span>
+      </div>
     </div>
-
-    <button id="themeButton" class="theme-btn">🎨</button>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner"> © 2026 Tempest Modz — Story Mode only. <br> Not affiliated with Rockstar Games or Take‑Two Interactive. </div>
+      <button id="themeButton" class="theme-btn">🎨</button>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
