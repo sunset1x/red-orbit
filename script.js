@@ -283,6 +283,8 @@ document.getElementById("themeButton").addEventListener("click", () => {
         premiumIframe.src = "https://www.youtube.com/embed/nK_y97QGVQI?autoplay=0&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0";
       }
 
+      if (id === "cherax") setStatus(true);
+          
       premiumOverlay.classList.add("active");
       premiumPopup.classList.add("active");
     });
