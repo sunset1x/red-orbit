@@ -862,6 +862,134 @@ html {
   opacity: 1;
 }
 
+/* OVERLAY */
+.premium-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  z-index: 2000;
+}
+
+.premium-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* POPUP */
+.premium-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.85);
+  background: var(--card);
+  border-radius: 20px;
+  width: min(90%, 700px);
+  padding: 28px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  z-index: 2001;
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.55),
+    0 0 40px var(--accent);
+}
+
+.premium-popup.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* CLOSE BUTTON */
+.premium-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+/* CONTENT */
+.premium-content {
+  margin-top: 10px;
+}
+
+.premium-content h2 {
+  font-size: 2rem;
+  margin-bottom: 14px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* VIDEO */
+.premium-video {
+  width: 100%;
+  height: 320px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.premium-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* DESCRIPTION */
+#premiumDesc {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+/* STATS */
+.premium-stats {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 24px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.stat-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* BUTTONS */
+.premium-actions {
+  display: flex;
+  gap: 14px;
+}
+
+.premium-btn {
+  padding: 12px 20px;
+  background: var(--bg-alt);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.premium-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px var(--accent);
+}
 
     
 
