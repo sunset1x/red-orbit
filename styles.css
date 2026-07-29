@@ -769,25 +769,13 @@ html {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ### */
-#tab-overview {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding-right: 6px;
-}
+/* Video */
 
 #modalVideo {
   width: 100%;
   aspect-ratio: 16 / 9;
   border-radius: 12px;
   border: 1px solid var(--card-border);
-}
-
-#modalDesc {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  line-height: 1.55;
 }
 
 /* BUTTONS */
