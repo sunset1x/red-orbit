@@ -14,9 +14,7 @@ const tutorialData = {
 
     changelog: `
       <ul class="changelog-list">
-        <li><strong>v3.1</strong> — Updated protections</li>
-        <li><strong>v3.0</strong> — UI overhaul</li>
-        <li><strong>v2.9</strong> — Improved stability</li>
+            <p>No changelog available.</p>
       </ul>
     `,
 
@@ -48,9 +46,7 @@ const tutorialData = {
 
     changelog: `
       <ul class="changelog-list">
-        <li><strong>v2.4</strong> — Updated for latest GTA patch</li>
-        <li><strong>v2.3</strong> — Improved protections</li>
-        <li><strong>v2.2</strong> — Added new recovery options</li>
+            <p>No changelog available.</p>
       </ul>
     `,
 
@@ -81,9 +77,7 @@ const tutorialData = {
 
     changelog: `
       <ul class="changelog-list">
-        <li><strong>v1.9</strong> — Updated for latest Legacy patch</li>
-        <li><strong>v1.8</strong> — Improved stability</li>
-        <li><strong>v1.7</strong> — Added new protections</li>
+            <p>No changelog available.</p>
       </ul>
     `,
 
