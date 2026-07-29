@@ -286,28 +286,6 @@ document.querySelectorAll(".more-btn").forEach(btn => {
     modalHowTo.innerHTML = t.howto || "<p>No instructions available.</p>";
 
     // TAB CONTROL
-    const allowedTabs = t.tabs || ["overview", "changelog", "howto"];
-
-    ["overview", "changelog", "howto"].forEach(tab => {
-      const btnEl = document.querySelector(`.tab-btn[data-tab="${tab}"]`);
-      const tabEl = document.getElementById(`tab-${tab}`);
-
-      if (!allowedTabs.includes(tab)) {
-        btnEl.style.display = "none";
-        tabEl.style.display = "none";
-      } else {
-        btnEl.style.display = "inline-block";
-        tabEl.style.display = "block";
-      }
-    });
-
-    // Activate first allowed tab
-    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
-    document.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
-
-    const firstTab = allowedTabs[0];
-    document.querySelector(`.tab-btn[data-tab="${firstTab}"]`).classList.add("active");
-    document.getElementById(`tab-${firstTab}`).classList.add("active");
 
     // OPEN MODAL
     modal.classList.add("active");
