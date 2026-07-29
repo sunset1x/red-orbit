@@ -205,13 +205,54 @@
 
   </div>
 
-  <!-- MODAL -->
-  <div id="modalOverlay" class="modal-overlay"></div>
+ <!-- MODAL OVERLAY -->
+<div id="modalOverlay" class="modal-overlay"></div>
 
-  <div id="modal" class="modal">
-    <button id="modalClose" class="modal-close">×</button>
-    <div id="modalContent"></div>
+<!-- NEW TUTORIAL MODAL -->
+<div id="modal" class="tutorial-modal">
+
+  <button id="modalClose" class="modal-close">×</button>
+
+  <!-- HEADER -->
+  <h2 id="modalTitle"></h2>
+
+  <!-- STATUS -->
+  <div class="modal-status">
+    <span id="modalStatusDot" class="status-dot operational"></span>
+    <span id="modalStatusText">Operational</span>
   </div>
+
+  <!-- TAB BUTTONS -->
+  <div class="modal-tabs">
+    <button class="tab-btn active" data-tab="overview">Overview</button>
+    <button class="tab-btn" data-tab="changelog">Changelog</button>
+    <button class="tab-btn" data-tab="howto">How To</button>
+  </div>
+
+  <!-- TAB CONTENT -->
+  <div class="modal-body">
+
+    <!-- OVERVIEW TAB -->
+    <div id="tab-overview" class="tab-content active">
+      <iframe id="modalVideo" allowfullscreen></iframe>
+
+      <p id="modalDesc"></p>
+
+      <div class="modal-buttons" id="modalButtons"></div>
+    </div>
+
+    <!-- CHANGELOG TAB -->
+    <div id="tab-changelog" class="tab-content">
+      <div id="modalChangelog"></div>
+    </div>
+
+    <!-- HOW TO TAB -->
+    <div id="tab-howto" class="tab-content">
+      <div id="modalHowTo"></div>
+    </div>
+
+  </div>
+</div>
 
 <!-- PREMIUM POPUP OVERLAY -->
 <div id="premiumOverlay" class="premium-overlay"></div>
