@@ -145,12 +145,7 @@ const modalOverlay = document.getElementById("modalOverlay");
 const modalContent = document.getElementById("modalContent");
 const modalClose = document.getElementById("modalClose");
 
-document.querySelectorAll(".more-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const id = btn.dataset.id;
-    const t = tutorialData[id];
-
-document.querySelectorAll(".featured-launch-btn").forEach(btn => {
+document.querySelectorAll(".more-btn", ".featured-launch-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     const id = btn.dataset.id;
     const t = tutorialData[id];
