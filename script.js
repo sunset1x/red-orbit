@@ -10,6 +10,7 @@ const tutorialData = {
     desc: "The most powerful and reliable paid GTA V mod menu.",
     embed: "https://www.youtube.com/embed/nK_y97QGVQI",
     status: "operational",
+    tabs: ["overview", "changelog", "howto"],
 
     changelog: `
       <ul class="changelog-list">
@@ -42,6 +43,7 @@ const tutorialData = {
     desc: "The best free GTA5 Online menu for Enhanced Edition.",
     embed: "https://www.youtube.com/embed/ddmhUIjrmoU",
     status: "operational",
+    tabs: ["overview", "changelog", "howto"],
 
     changelog: `
       <ul class="changelog-list">
@@ -74,6 +76,7 @@ const tutorialData = {
     desc: "The best free GTA5 Online menu for Legacy Edition.",
     embed: "https://www.youtube.com/embed/EhqrD2KMqWs",
     status: "operational",
+    tabs: ["overview", "changelog", "howto"],
 
     changelog: `
       <ul class="changelog-list">
@@ -106,13 +109,10 @@ const tutorialData = {
     desc: "An outstanding mod menu with dozens of features that is still undergoing testing.",
     embed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     status: "offline",
+    tabs: ["overview", "howto"],
 
     changelog: `
-      <ul class="changelog-list">
-        <li><strong>v1.3</strong> — Added new ESP features</li>
-        <li><strong>v1.2</strong> — Improved injection stability</li>
-        <li><strong>v1.1</strong> — Updated UI</li>
-      </ul>
+      <p>No changelog available.</p>
     `,
 
     howto: `
@@ -137,13 +137,10 @@ const tutorialData = {
     desc: "The most iconic free GTA5 Online menu for Legacy Edition.",
     embed: "https://www.youtube.com/embed/pnnwFsWkYzE",
     status: "offline",
+    tabs: ["overview", "howto"],
 
     changelog: `
-      <ul class="changelog-list">
-        <li><strong>v0.9</strong> — Last stable release</li>
-        <li><strong>v0.8</strong> — Added basic protections</li>
-        <li><strong>v0.7</strong> — Improved recovery options</li>
-      </ul>
+      <p>No changelog available (menu discontinued).</p>
     `,
 
     howto: `
@@ -164,6 +161,7 @@ const tutorialData = {
   }
 
 };
+
 
 
 
@@ -260,6 +258,29 @@ document.querySelectorAll(".more-btn").forEach(btn => {
     const id = btn.dataset.id;
     const t = tutorialData[id];
 
+      // Reset all tabs to visible
+      document.querySelectorAll(".tab-btn").forEach(btn => btn.style.display = "inline-block");
+      document.querySelectorAll(".tab-content").forEach(tab => tab.style.display = "block");
+      
+      // Hide tabs not included in this tutorial
+      const allowedTabs = t.tabs || ["overview", "changelog", "howto"];
+      
+      ["overview", "changelog", "howto"].forEach(tab => {
+        if (!allowedTabs.includes(tab)) {
+          document.querySelector(`.tab-btn[data-tab="${tab}"]`).style.display = "none";
+          document.getElementById(`tab-${tab}`).style.display = "none";
+        }
+      });
+      
+      // Always activate the first allowed tab
+      document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
+      document.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
+      
+      const firstTab = allowedTabs[0];
+      document.querySelector(`.tab-btn[data-tab="${firstTab}"]`).classList.add("active");
+      document.getElementById(`tab-${firstTab}`).classList.add("active");
+
+        
     // TITLE
     modalTitle.textContent = t.title;
 
