@@ -400,6 +400,9 @@ launchBtns.forEach(btn => {
     document.getElementById("premiumUpdatedText").textContent =
       getDaysAgo(premiumData.lastUpdated);
 
+    document.getElementById("premiumPopupUpdatedText").textContent =
+      getDaysAgo(premiumData.lastUpdated);
+        
     // Open popup
     premiumOverlay.classList.add("active");
     premiumPopup.classList.add("active");
@@ -467,4 +470,7 @@ function getDaysAgo(dateString) {
 
 document.getElementById("premiumUpdatedText").textContent =
   getDaysAgo(premiumData.lastUpdated);
+document.getElementById("premiumPopupUpdatedText").textContent =
+  getDaysAgo(premiumData.lastUpdated);
+
 
