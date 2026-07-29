@@ -280,7 +280,7 @@ document.getElementById("themeButton").addEventListener("click", () => {
 
       // Load video based on ID
       if (id === "cherax") {
-        premiumIframe.src = "https://www.youtube.com/embed/VIDEO_ID?autoplay=1&mute=1";
+        premiumIframe.src = "https://www.youtube.com/embed/nK_y97QGVQI?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0";
       }
 
       premiumOverlay.classList.add("active");
