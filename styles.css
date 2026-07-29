@@ -296,7 +296,7 @@ html {
 .spotlight-thumb {
   position: relative;
   width: 100%;
-  height: 280px; /* TALLER CINEMATIC IMAGE */
+  height: 220px; /* TALLER CINEMATIC IMAGE */
   overflow: hidden;
 }
 
