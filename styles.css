@@ -378,6 +378,13 @@ html {
   box-shadow: 0 0 20px var(--accent);
 }
 
+.featured-disclaimer {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  opacity: 0.8;
+  text-align: left;
+}
 
 
 
