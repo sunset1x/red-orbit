@@ -249,7 +249,7 @@ updateTutorialCount();
    THEME SWITCHER
 ------------------------------ */
 const themeOrder = ["theme-tempest", "theme-purple", "theme-blood", "theme-glass"];
-let currentTheme = localStorage.getItem("theme") || "theme-glass";
+let currentTheme = localStorage.getItem("theme") || "theme-purple";
 
 document.body.classList.add(currentTheme);
 
