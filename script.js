@@ -150,6 +150,11 @@ document.querySelectorAll(".more-btn").forEach(btn => {
     const id = btn.dataset.id;
     const t = tutorialData[id];
 
+document.querySelectorAll(".featured-launch-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const id = btn.dataset.id;
+    const t = tutorialData[id];
+        
     let buttons = "";
 
     if (t.type === "free" && t.download) {
