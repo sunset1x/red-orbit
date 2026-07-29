@@ -748,13 +748,15 @@ html {
 /* CONTENT AREA */
 .modal-body {
   flex: 1;
-  overflow-y: auto;
-  padding-right: 6px;
+  overflow: hidden; /* no scroll here */
+  display: flex;
+  flex-direction: column;
 }
 
 /* TAB CONTENT */
 .tab-content {
   display: none;
+  flex: 1;
   animation: fadeIn 0.2s ease;
 }
 
