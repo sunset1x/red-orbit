@@ -516,13 +516,6 @@ html {
     color: var(--text-muted);
     white-space: nowrap;
     }
-
-    .tutorial-dot {
-    width: 10px;
-    height: 10px;
-    background: #ff3b3b;   /* solid red */
-    border-radius: 50%;
-  }
     
     /* GRID — stable 3-per-row layout */
     .tutorial-grid {
@@ -642,60 +635,115 @@ html {
     }
 
 
-        .modal-overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.6);
-        backdrop-filter: blur(4px);
-        opacity: 0;
-        pointer-events: none;
-        transition: 0.25s ease;
-        z-index: 1000;
-      }
-      
-      .modal-overlay.active {
-        opacity: 1;
-        pointer-events: auto;
-      }
-      
-      .modal {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0.9);
-        background: #111;
-        padding: 25px;
-        width: min(90%, 600px);
-        border-radius: 12px;
-        opacity: 0;
-        transition: 0.25s ease;
-        z-index: 1001;
-        border: 1px solid rgba(255,255,255,0.1);
-        pointer-events: none;   /* 🔥 key line */
-      }
-      
-      .modal.active {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-        pointer-events: auto;   /* 🔥 re-enable clicks only when visible */
-      }
-      
-      .modal-close {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 28px;
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        cursor: pointer;
-      }
+ /* NEW TUTORIAL MODAL */
+.tutorial-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background: var(--card);
+  width: min(90%, 650px);
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s ease;
+  z-index: 1001;
+}
 
-      .modal-buttons {
-        display: flex;
-        gap: 12px;
-        margin-top: 20px;
-      }
+.tutorial-modal.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+}
+
+/* CLOSE BUTTON */
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+/* STATUS */
+.modal-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: statusPulse 1.2s infinite ease-in-out;
+}
+
+.status-dot.operational {
+  background: #00ff6a;
+  box-shadow: 0 0 10px #00ff6a;
+}
+
+.status-dot.offline {
+  background: #ff3b3b;
+  box-shadow: 0 0 10px #ff3b3b;
+}
+
+/* TABS */
+.modal-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  background: var(--bg-alt);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.tab-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* TAB CONTENT */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* VIDEO */
+#modalVideo {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  border: none;
+}
+
+/* BUTTONS */
+.modal-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
     
       /* DOWNLOAD BUTTON — green success theme */
       .btn-download {
