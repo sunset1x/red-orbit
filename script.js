@@ -258,29 +258,6 @@ document.querySelectorAll(".more-btn").forEach(btn => {
     const id = btn.dataset.id;
     const t = tutorialData[id];
 
-      // Reset all tabs to visible
-      document.querySelectorAll(".tab-btn").forEach(btn => btn.style.display = "inline-block");
-      document.querySelectorAll(".tab-content").forEach(tab => tab.style.display = "block");
-      
-      // Hide tabs not included in this tutorial
-      const allowedTabs = t.tabs || ["overview", "changelog", "howto"];
-      
-      ["overview", "changelog", "howto"].forEach(tab => {
-        if (!allowedTabs.includes(tab)) {
-          document.querySelector(`.tab-btn[data-tab="${tab}"]`).style.display = "none";
-          document.getElementById(`tab-${tab}`).style.display = "none";
-        }
-      });
-      
-      // Always activate the first allowed tab
-      document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
-      document.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
-      
-      const firstTab = allowedTabs[0];
-      document.querySelector(`.tab-btn[data-tab="${firstTab}"]`).classList.add("active");
-      document.getElementById(`tab-${firstTab}`).classList.add("active");
-
-        
     // TITLE
     modalTitle.textContent = t.title;
 
@@ -308,6 +285,30 @@ document.querySelectorAll(".more-btn").forEach(btn => {
     // HOW TO
     modalHowTo.innerHTML = t.howto || "<p>No instructions available.</p>";
 
+    // TAB CONTROL
+    const allowedTabs = t.tabs || ["overview", "changelog", "howto"];
+
+    ["overview", "changelog", "howto"].forEach(tab => {
+      const btnEl = document.querySelector(`.tab-btn[data-tab="${tab}"]`);
+      const tabEl = document.getElementById(`tab-${tab}`);
+
+      if (!allowedTabs.includes(tab)) {
+        btnEl.style.display = "none";
+        tabEl.style.display = "none";
+      } else {
+        btnEl.style.display = "inline-block";
+        tabEl.style.display = "block";
+      }
+    });
+
+    // Activate first allowed tab
+    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+    document.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
+
+    const firstTab = allowedTabs[0];
+    document.querySelector(`.tab-btn[data-tab="${firstTab}"]`).classList.add("active");
+    document.getElementById(`tab-${firstTab}`).classList.add("active");
+
     // OPEN MODAL
     modal.classList.add("active");
     modalOverlay.classList.add("active");
@@ -324,16 +325,17 @@ function closeModal() {
   modalVideo.src = ""; // stop video
 }
 
-/* TABS */
+/* TAB SWITCHING */
 document.querySelectorAll(".tab-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
 
     document.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
-    document.getElementById("tab-" + btn.dataset.tab).classList.add("active");
+    document.getElementById(`tab-${btn.dataset.tab}`).classList.add("active");
   });
 });
+
 
 
 
