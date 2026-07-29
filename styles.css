@@ -1,4 +1,4 @@
- :root {
+    :root {
       --bg: #060818;
       --bg-alt: #0c1128;
       --accent: #5a3cff;
@@ -142,7 +142,7 @@ html {
     .hero {
       margin-top: 0px;
       display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+      grid-template-columns: 1.6fr 1fr;
       gap: 28px;
     }
 
@@ -261,8 +261,8 @@ html {
         box-shadow: 0 0 14px rgba(88, 101, 242, 0.6);
         transform: translateY(-2px);
       }
-
-      /* FEATURED GAME OF THE WEEK CARD */
+    
+    /* FEATURED GAME OF THE WEEK CARD */
     .featured-card {
       background: var(--bg-alt);
       border: 1px solid var(--card-border);
@@ -309,8 +309,6 @@ html {
       box-shadow: 0 4px 12px rgba(0,0,0,0.4);
       overflow: hidden; /* required for shine */
     }
- 
-
 
     .pinned-badge {
       position: absolute;
@@ -917,9 +915,3 @@ html {
   box-shadow: var(--shadow-soft);
   transform: translateY(-2px);
 }
-
-
-
-
-
-
