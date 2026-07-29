@@ -789,7 +789,7 @@ html {
 /* Video */
 
 #modalVideo {
-  max-height: 320px;
+  max-height: 360px;
   width: 100%;
   aspect-ratio: 16 / 9;
   border-radius: 12px;
@@ -897,12 +897,10 @@ html {
         color: #fff;
         font-weight: 600;
         text-decoration: none;
-        box-shadow: 0 0 12px var(--accent-soft);
         transition: 0.2s ease;
       }
       .btn-discord:hover {
         background: #6f7aff;
-        box-shadow: 0 0 14px rgba(88, 101, 242, 0.6);
         transform: translateY(-2px);
       }
 
