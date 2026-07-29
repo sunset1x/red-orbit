@@ -1,30 +1,71 @@
 /*------------------------------
       TUTORIAL DATABASE 
 ------------------------------*/
+
 const tutorialData = {
+
   cherax: {
     title: "Cherax",
     tags: "PAID • RECOMMEND • GTA 5 ONLINE",
     desc: "The most powerful and reliable paid GTA V mod menu.",
     embed: "https://www.youtube.com/embed/nK_y97QGVQI",
-    type: "paid",
-    purchase: "https://cherax.menu/landing#pricing",
-    download: "",
-    website: "https://cherax.menu",
-    discord: "https://discord.gg/bHy6eRMNeV"
+    status: "operational",
+
+    changelog: `
+      <ul class="changelog-list">
+        <li><strong>v3.1</strong> — Updated protections</li>
+        <li><strong>v3.0</strong> — UI overhaul</li>
+        <li><strong>v2.9</strong> — Improved stability</li>
+      </ul>
+    `,
+
+    howto: `
+      <ol class="howto-list">
+        <li>Purchase Cherax from the official website.</li>
+        <li>Download the launcher.</li>
+        <li>Run the launcher as administrator.</li>
+        <li>Log in with your account.</li>
+        <li>Inject once GTA V is fully loaded.</li>
+      </ol>
+    `,
+
+    buttons: `
+      <a href="https://cherax.menu/landing#pricing" class="btn-purchase" target="_blank">🛒 Purchase</a>
+      <a href="https://cherax.menu" class="btn-website" target="_blank">Website</a>
+      <a href="https://discord.gg/bHy6eRMNeV" class="btn-discord" target="_blank">Discord</a>
+    `
   },
 
   yimv2: {
-    title: "YimMenu V2",
+    title: "YimMenu V2 (Enhanced)",
     tags: "FREE • RECOMMEND • GTA 5 ONLINE",
     desc: "The best free GTA5 Online menu for Enhanced Edition.",
     embed: "https://www.youtube.com/embed/ddmhUIjrmoU",
-    type: "free",
-    helpTooltip: "Need help installing YimMenu V2?",
-    helpLink: "https://www.youtube.com/watch?v=xj9UvxI6voM",
-    download: "https://loot-link.com/s?GWDxHyNk",
-    website: "",
-    discord: "https://discord.gg/bHy6eRMNeV"
+    status: "operational",
+
+    changelog: `
+      <ul class="changelog-list">
+        <li><strong>v2.4</strong> — Updated for latest GTA patch</li>
+        <li><strong>v2.3</strong> — Improved protections</li>
+        <li><strong>v2.2</strong> — Added new recovery options</li>
+      </ul>
+    `,
+
+    howto: `
+      <ol class="howto-list">
+        <li>Download YimMenu V2 using the button below.</li>
+        <li>Extract the ZIP file.</li>
+        <li>Place YimMenu files into your GTA directory.</li>
+        <li>Launch GTA V (Enhanced Edition).</li>
+        <li>Press <strong>F5</strong> to open the menu.</li>
+      </ol>
+    `,
+
+    buttons: `
+      <a href="https://loot-link.com/s?GWDxHyNk" class="btn-download" target="_blank">⬇ Download</a>
+      <a href="https://discord.gg/bHy6eRMNeV" class="btn-discord" target="_blank">Discord</a>
+      <a href="https://www.youtube.com/watch?v=xj9UvxI6voM" class="btn-help" target="_blank">❓ Help</a>
+    `
   },
 
   yimv1: {
@@ -32,24 +73,62 @@ const tutorialData = {
     tags: "FREE • GUIDE • GTA 5 ONLINE",
     desc: "The best free GTA5 Online menu for Legacy Edition.",
     embed: "https://www.youtube.com/embed/EhqrD2KMqWs",
-    type: "free",
-    helpTooltip: "Need help installing YimMenu (Legacy)?",
-    helpLink: "https://www.youtube.com/watch?v=xj9UvxI6voM",
-    download: "https://loot-link.com/s?4ggkVkbh",
-    website: "",
-    discord: "https://discord.gg/bHy6eRMNeV"
+    status: "operational",
+
+    changelog: `
+      <ul class="changelog-list">
+        <li><strong>v1.9</strong> — Updated for latest Legacy patch</li>
+        <li><strong>v1.8</strong> — Improved stability</li>
+        <li><strong>v1.7</strong> — Added new protections</li>
+      </ul>
+    `,
+
+    howto: `
+      <ol class="howto-list">
+        <li>Download YimMenu Legacy using the button below.</li>
+        <li>Extract the ZIP file.</li>
+        <li>Place YimMenu files into your GTA Legacy directory.</li>
+        <li>Launch GTA V (Legacy Edition).</li>
+        <li>Press <strong>F5</strong> to open the menu.</li>
+      </ol>
+    `,
+
+    buttons: `
+      <a href="https://loot-link.com/s?4ggkVkbh" class="btn-download" target="_blank">⬇ Download</a>
+      <a href="https://discord.gg/bHy6eRMNeV" class="btn-discord" target="_blank">Discord</a>
+      <a href="https://www.youtube.com/watch?v=xj9UvxI6voM" class="btn-help" target="_blank">❓ Help</a>
+    `
   },
 
   OxCheats: {
     title: "0xCheats (Enhanced)",
-    tags: "FREE • GUIDE • GTA 5 ONLINE",
+    tags: "PAID • GUIDE • GTA 5 ONLINE",
     desc: "An outstanding mod menu with dozens of features that is still undergoing testing.",
     embed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    type: "paid",
-    purchase: "https://0xcheats.com/games",
-    download: "",
-    website: "",
-    discord: "https://discord.gg/bHy6eRMNeV"
+    status: "offline",
+
+    changelog: `
+      <ul class="changelog-list">
+        <li><strong>v1.3</strong> — Added new ESP features</li>
+        <li><strong>v1.2</strong> — Improved injection stability</li>
+        <li><strong>v1.1</strong> — Updated UI</li>
+      </ul>
+    `,
+
+    howto: `
+      <ol class="howto-list">
+        <li>Purchase 0xCheats from the official website.</li>
+        <li>Download the launcher.</li>
+        <li>Run as administrator.</li>
+        <li>Log in with your account.</li>
+        <li>Inject into GTA V.</li>
+      </ol>
+    `,
+
+    buttons: `
+      <a href="https://0xcheats.com/games" class="btn-purchase" target="_blank">🛒 Purchase</a>
+      <a href="https://discord.gg/bHy6eRMNeV" class="btn-discord" target="_blank">Discord</a>
+    `
   },
 
   Kiddions: {
@@ -57,14 +136,35 @@ const tutorialData = {
     tags: "FREE • GUIDE • GTA 5 ONLINE",
     desc: "The most iconic free GTA5 Online menu for Legacy Edition.",
     embed: "https://www.youtube.com/embed/pnnwFsWkYzE",
-    type: "free",
-    helpTooltip: "Need help installing YimMenu V2?",
-    helpLink: "https://www.youtube.com/watch?v/xj9UvxI6voM",
-    download: "https://loot-link.com/s?dd3d6b1d",
-    website: "",
-    discord: "https://discord.gg/bHy6eRMNeV"
+    status: "offline",
+
+    changelog: `
+      <ul class="changelog-list">
+        <li><strong>v0.9</strong> — Last stable release</li>
+        <li><strong>v0.8</strong> — Added basic protections</li>
+        <li><strong>v0.7</strong> — Improved recovery options</li>
+      </ul>
+    `,
+
+    howto: `
+      <ol class="howto-list">
+        <li>Download Kiddions using the button below.</li>
+        <li>Extract the ZIP file.</li>
+        <li>Place Kiddions files into your GTA directory.</li>
+        <li>Launch GTA V.</li>
+        <li>Press <strong>F5</strong> to open the menu.</li>
+      </ol>
+    `,
+
+    buttons: `
+      <a href="https://loot-link.com/s?dd3d6b1d" class="btn-download" target="_blank">⬇ Download</a>
+      <a href="https://discord.gg/bHy6eRMNeV" class="btn-discord" target="_blank">Discord</a>
+      <a href="https://www.youtube.com/watch?v=xj9UvxI6voM" class="btn-help" target="_blank">❓ Help</a>
+    `
   }
+
 };
+
 
 
 /*------------------------------
@@ -142,84 +242,77 @@ applyPagination(1);
 ------------------------------ */
 const modal = document.getElementById("modal");
 const modalOverlay = document.getElementById("modalOverlay");
-const modalContent = document.getElementById("modalContent");
 const modalClose = document.getElementById("modalClose");
+
+const modalTitle = document.getElementById("modalTitle");
+const modalVideo = document.getElementById("modalVideo");
+const modalDesc = document.getElementById("modalDesc");
+const modalButtons = document.getElementById("modalButtons");
+
+const modalStatusDot = document.getElementById("modalStatusDot");
+const modalStatusText = document.getElementById("modalStatusText");
+
+const modalChangelog = document.getElementById("modalChangelog");
+const modalHowTo = document.getElementById("modalHowTo");
 
 document.querySelectorAll(".more-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     const id = btn.dataset.id;
     const t = tutorialData[id];
-        
-    let buttons = "";
 
-    if (t.type === "free" && t.download) {
-      buttons += `
-        <a href="${t.download}" class="btn-download" target="_blank">
-          <img src="https://raw.githubusercontent.com/sunset1x/red-orbit/refs/heads/main/images/downloadd.png" class="icon">
-          <span class="download-text">Download</span>
-        </a>
-      `;
+    // TITLE
+    modalTitle.textContent = t.title;
+
+    // VIDEO
+    modalVideo.src = t.embed + "?autoplay=0&mute=1&controls=0&modestbranding=1";
+
+    // DESCRIPTION
+    modalDesc.textContent = t.desc;
+
+    // STATUS
+    if (t.status === "operational") {
+      modalStatusDot.className = "status-dot operational";
+      modalStatusText.textContent = "Operational";
+    } else {
+      modalStatusDot.className = "status-dot offline";
+      modalStatusText.textContent = "Not Operational";
     }
 
-    if (t.type === "paid" && t.purchase) {
-      buttons += `
-        <a href="${t.purchase}" class="btn-purchase" target="_blank">
-          <span class="download-text">🛒 Purchase</span>
-        </a>
-      `;
-    }
+    // BUTTONS
+    modalButtons.innerHTML = t.buttons || "";
 
-    if (t.website) {
-      buttons += `
-        <a href="${t.website}" class="btn-website" target="_blank">
-          <img src="https://raw.githubusercontent.com/sunset1x/red-orbit/refs/heads/main/images/website.png" class="icon">
-        </a>
-      `;
-    }
+    // CHANGELOG
+    modalChangelog.innerHTML = t.changelog || "<p>No changelog available.</p>";
 
-    if (t.discord) {
-      buttons += `
-        <a href="${t.discord}" class="btn-discord" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" class="icon">
-        </a>
-      `;
-    }
+    // HOW TO
+    modalHowTo.innerHTML = t.howto || "<p>No instructions available.</p>";
 
-    if (t.type === "free" && t.helpTooltip && t.helpLink) {
-      buttons += `
-        <a href="${t.helpLink}" target="_blank" class="help-tooltip">
-          <span class="icon">?</span>
-          <span class="tooltip-text">${t.helpTooltip}</span>
-        </a>
-      `;
-    }
-
-    modalContent.innerHTML = `
-      <h2>${t.title}</h2>
-
-      <iframe width="100%" height="315"
-        src="${t.embed}"
-        allowfullscreen></iframe>
-
-      <p style="margin-top:15px;">${t.desc}</p>
-
-      <div class="modal-buttons">
-        ${buttons}
-      </div>
-    `;
-
+    // OPEN MODAL
     modal.classList.add("active");
     modalOverlay.classList.add("active");
   });
 });
 
+// CLOSE
 modalClose.addEventListener("click", closeModal);
 modalOverlay.addEventListener("click", closeModal);
 
 function closeModal() {
   modal.classList.remove("active");
   modalOverlay.classList.remove("active");
+  modalVideo.src = ""; // stop video
 }
+
+/* TABS */
+document.querySelectorAll(".tab-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    document.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
+    document.getElementById("tab-" + btn.dataset.tab).classList.add("active");
+  });
+});
 
 
 
