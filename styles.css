@@ -791,10 +791,17 @@ html {
 #modalVideo {
   width: 100%;
   aspect-ratio: 16 / 9;
+  max-height: 220px; /* slightly smaller */
   border-radius: 12px;
   margin-bottom: 16px;
   border: none;
 }
+
+.modal-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  pointer-events: none;
 
 /* BUTTONS */
 .modal-buttons {
