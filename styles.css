@@ -1039,7 +1039,7 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 80%;
   background: var(--accent-soft);
   color: var(--text-main);
   padding: 12px 20px;
@@ -1050,7 +1050,7 @@ html {
   z-index: 9999;
   transform: translateY(-100%);
   transition: transform 0.35s ease;
-  height: 50px; /* FIX: lock height */
+  height: 35px; /* FIX: lock height */
 }
 
 
