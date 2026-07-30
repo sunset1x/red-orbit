@@ -83,7 +83,32 @@
       margin: 0;
       padding: 0;
     }
-    
+
+/* Custom Scrollbar */
+body {
+  scrollbar-width: thin;              /* Firefox */
+  scrollbar-color: var(--accent) var(--bg-alt); 
+}
+
+/* Chrome, Edge, Safari */
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--bg-alt);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-soft);
+}
+
+
    .page-shell {
   max-width: 1200px;      /* slightly wider container */
   margin: 80px auto;      /* keeps it centered */
