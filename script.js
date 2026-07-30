@@ -478,3 +478,22 @@ document.getElementById("premiumPopupUpdatedText").textContent =
 ------------------------------ */
 
 document.addEventListener("contextmenu", e => e.preventDefault());
+
+/* ------------------------------
+       Announcement Banner
+------------------------------ */
+
+const announcementBanner = document.getElementById("announcementBanner");
+const announcementClose = document.getElementById("announcementClose");
+const announcementText = document.getElementById("announcementText");
+
+// Close banner
+announcementClose.addEventListener("click", () => {
+  announcementBanner.style.display = "none";
+});
+
+// Update announcement text easily
+function setAnnouncement(message) {
+  announcementText.textContent = message;
+}
+
