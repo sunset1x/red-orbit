@@ -1035,6 +1035,50 @@ html {
   opacity: 1;
 }
 
+.announcement-banner {
+  width: 100%;
+  background: var(--accent-soft);
+  border-bottom: 1px solid var(--card-border);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  animation: fadeIn 0.4s ease;
+}
+
+.announcement-text {
+  color: var(--text-main);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.announcement-link {
+  color: var(--accent);
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.announcement-link:hover {
+  text-decoration: underline;
+}
+
+.announcement-close {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: var(--text-main);
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.2s ease;
+}
+
+.announcement-close:hover {
+  opacity: 1;
+}
+
+
 /* OVERLAY */
 .premium-overlay {
   position: fixed;
