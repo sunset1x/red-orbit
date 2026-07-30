@@ -1060,9 +1060,11 @@ html {
 }
 
 #topBannerText {
+  padding-right: 40px; /* space for the close button */
   font-size: 0.95rem;
   font-weight: 500;
 }
+
 
 #topBannerClose {
   position: absolute;
