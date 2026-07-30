@@ -1039,7 +1039,7 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  width: 95%;
+  width: 99%;
   background: var(--accent-soft);
   color: var(--text-main);
   padding: 12px 20px;
