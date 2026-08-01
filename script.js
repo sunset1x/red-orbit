@@ -98,12 +98,12 @@ const tutorialData = {
     `
   },
 
-  OxCheats: {
-    title: "0xCheats (Enhanced)",
+  atlas: {
+    title: "Atlas (Enhanced & Legacy)",
     tags: "PAID • GUIDE • GTA 5 ONLINE",
     desc: "An outstanding mod menu with dozens of features that is still undergoing testing.",
-    embed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    status: "offline",
+    embed: "https://www.youtube.com/embed/",
+    status: "online",
     tabs: ["overview", "howto"],
 
     changelog: `
@@ -121,7 +121,7 @@ const tutorialData = {
     `,
 
     buttons: `
-      <a href="https://0xcheats.com/games" class="btn-purchase" target="_blank">🛒 Purchase</a>
+      <a href="https://atlasmenu.net/" class="btn-purchase" target="_blank">🛒 Purchase</a>
       <a href="https://discord.gg/bHy6eRMNeV" class="btn-discord" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" class="modal-icon"></a>
     `
   },
