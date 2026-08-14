@@ -364,7 +364,7 @@ document.getElementById("themeButton").addEventListener("click", () => {
 ------------------------------ */
 
 const premiumData = {
-  lastUpdated: "2026-07-14" // date you updated the mod menu
+  lastUpdated: "2026-08-9" // date you updated the mod menu
 };
 
 
